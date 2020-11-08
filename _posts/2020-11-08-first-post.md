@@ -1,20 +1,21 @@
 ---
-title:  "github.io 블로그 시작하기"
-excerpt: "GitHub Blog 서비스인 github.io 블로그 시작하기로 했다."
-
+title:  "GitHub Blog 만들기"
+excerpt: "내 가치를 알리기 위한 수단 중 기술 블로그를 GitHub Blog 로 활용하기로 했다."  
+last_modified_at: 2019-04-13T08:06:00-05:00  
+reference: https://devinlife.com/howto/  
 categories:
   - Blog
 tags:
   - Blog
-last_modified_at: 2019-04-13T08:06:00-05:00
 ---
 
-GitHub Blog 서비스인 github.io 블로그 시작하기로 했다.
-GitHub Blog 서비스의 이름은 Pages이다.
+내 가치를 알리기 위한 수단 중 기술 블로그를 **GitHub Blog** 로 활용하기로 했다.  
+많은 레퍼런스들이 있지만, 내가 직접 찾아보고 해본 것들로 남겨두려고 한다.
 
-Pages가 다른 블로그 플랫폼 보다 편한 것 같아서 마음에 든다.
-다른 사람들도 같이 많이 사용했으면 좋겠다는 생각이 든다.
+기본적으로 [Jekyll](http://jekyllrb-ko.github.io/) 을 사용하며 자세하게 알고 싶으면 링크를 타고 들어가서 보면 된다.  
+테마는 ~~눈 건강에 좋은~~ [해커](http://jekyllthemes.org/themes/hacker-blog/) 로 결정
 
-YFM에서 정의한 제목을 이중 괄호 구문으로 본문에 추가할 수 있다.
-이 글의 제목은 {{ page.title }}이고
-마지막으로 수정된 시간은 {{ page.last_modified_at }}이다.
+위에서 다운로드 받은 파일을 github 에 올리고 꾸미기만 하면 되는 간단한 작업인데,  
+github 에 올리기 위해서는 저장소가 필요하다.  
+저장소 생성을 할때 저장소명을 `{username}.github.io` 로 하고 거기에 다운로드 받은 파일을 main 혹은 master 브랜치에 커밋만 해주면 끝!  
+커밋 후 반영까지는 1~2분의 시간이 걸리므로 참고하자.
