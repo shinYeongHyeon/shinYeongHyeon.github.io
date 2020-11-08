@@ -3,5 +3,9 @@ layout: page
 title: About
 ---
 
-![den-shin](./assets/den.jpeg){: width="277" height="300"}
-Something about me.
+<p align="center">
+  <img width="277" height="360" src="./assets/den.jpeg">
+</p>
+
+---
+### Shin Yeong Hyeon 
