@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Den Shin's Blog</title>
+    <description>Den's Blog</description>
+    <link>http://localhost:8000</link>
+    <atom:link href="http://localhost:8000/feed.xml" rel="self" type="application/rss+xml" />
+    <author>
+      <name>Shin Yeong Hyeon</name>
+      <email>den.shin.dev@gmail.com</email>
+      <uri></uri>
+    </author>
+    
+      <item>
+        <title>(JavaScript) parseInt 의 약어</title>
+        <description>&lt;p&gt;parseInt 의 약어가 존재한다는 것을 알아내게 되는 일이 있었다.&lt;br /&gt;
+&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;parseInt(1)&lt;/code&gt; 은 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;+'1'&lt;/code&gt; 과 동일하다는 것이다.&lt;br /&gt;
+이 이유에 대해서는 자세히 알지는 못해서 이래저래 알아보고 동료직원과 고민도 해봤는데,&lt;br /&gt;
+뚜렷한 근거에 대해서는 알지 못했다.&lt;/p&gt;
+
+&lt;p&gt;이 글을 보고 &lt;em&gt;으잉?&lt;/em&gt; 하는 사람들도 있을 것 같아서 아래 사진을 첨부해본다.&lt;br /&gt;
+&lt;del&gt;나만 몰랐던 거 아니라고 해주세요&lt;/del&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;../assets/parseInt.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;그런데 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;+1&lt;/code&gt; 표현을 처음 봐서, 익숙치 않아서 그럴진 몰라도 가독성이 그리 좋아보이진 않아서&lt;br /&gt;
+실무나 프로젝트에 쓸 것 같지는 않다…&lt;/p&gt;
+
+&lt;p&gt;혹시 이에 대해서 이유/원인을 알고 있는 천사같은 분이 있으시다면,&lt;br /&gt;
+귀찮음을 무릎써주실 수 있다면,&lt;br /&gt;
+&lt;strong&gt;den.shin.dev@gmail.com&lt;/strong&gt; 으로 알려주시면 너무 감사하는 마음으로 살겠습니다-&lt;/p&gt;
+</description>
+        <pubDate>Mon, 09 Nov 2020 00:00:00 +0900</pubDate>
+        <link>http://localhost:8000//first-post</link>
+        <link href="http://localhost:8000/first-post"/>
+        <guid isPermaLink="true">http://localhost:8000/first-post</guid>
+      </item>
+    
+      <item>
+        <title>GitHub Blog 만들기</title>
+        <description>&lt;p&gt;내 가치를 알리기 위한 수단 중 기술 블로그를 &lt;strong&gt;GitHub Blog&lt;/strong&gt; 로 활용하기로 했다.&lt;br /&gt;
+많은 레퍼런스들이 있지만, 내가 직접 찾아보고 해본 것들로 남겨두려고 한다.&lt;/p&gt;
+
+&lt;p&gt;기본적으로 &lt;a href=&quot;http://jekyllrb-ko.github.io/&quot;&gt;Jekyll&lt;/a&gt; 을 사용하며 자세하게 알고 싶으면 링크를 타고 들어가서 보면 된다.&lt;br /&gt;
+테마는 &lt;del&gt;눈 건강에 좋은&lt;/del&gt; &lt;a href=&quot;http://jekyllthemes.org/themes/hacker-blog/&quot;&gt;해커&lt;/a&gt; 로 결정&lt;/p&gt;
+
+&lt;p&gt;위에서 다운로드 받은 파일을 github 에 올리고 꾸미기만 하면 되는 간단한 작업인데,&lt;br /&gt;
+github 에 올리기 위해서는 저장소가 필요하다.&lt;br /&gt;
+저장소 생성을 할때 저장소명을 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;{username}.github.io&lt;/code&gt; 로 하고 거기에 다운로드 받은 파일을 main 혹은 master 브랜치에 커밋만 해주면 끝!&lt;br /&gt;
+커밋 후 반영까지는 1~2분의 시간이 걸리므로 참고하자.&lt;/p&gt;
+</description>
+        <pubDate>Sun, 08 Nov 2020 00:00:00 +0900</pubDate>
+        <link>http://localhost:8000//first-post</link>
+        <link href="http://localhost:8000/first-post"/>
+        <guid isPermaLink="true">http://localhost:8000/first-post</guid>
+      </item>
+    
+  </channel>
+</rss>
