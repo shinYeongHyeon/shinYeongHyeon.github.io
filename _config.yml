@@ -30,3 +30,10 @@ plugins:
 # Custom variables
 owner : "Shin Yeong Hyeon"
 year : "2020"
+
+# Site Footer
+footer:
+  links:
+    - label: "GitHub"
+      icon: "fab fa-fw fa-github"
+      url: "https://github.com/shinYeongHyeon"
