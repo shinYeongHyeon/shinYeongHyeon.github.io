@@ -17,4 +17,4 @@ title: About
 ##### at TeamO2 (2016.12 ~ ) Development Leader
 ##### Backend-Developer
 ###### PHP/CodeIgniter/Laravel, NodeJS/Express/NestJS
-###### MySql, MongoDB
+###### MySql, MongoDB, Redis
