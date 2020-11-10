@@ -1,6 +1,7 @@
 ---
 title:  "GitHub Blog 만들기"
 excerpt: "내 가치를 알리기 위한 수단 중 기술 블로그를 GitHub Blog 로 활용하기로 했다."  
+url: naver.com
 last_modified_at: 2020-11-08  
 reference: https://devinlife.com/howto/  
 categories:

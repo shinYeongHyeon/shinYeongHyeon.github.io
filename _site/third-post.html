@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+  <meta name="generator" content="Jekyll">
+
+  <title>(NestJS) ValidationPipe()</title>
+
+  <link rel="stylesheet" href="/css/main.css">
+  
+  <link href="/atom.xml" type="application/atom+xml" rel="alternate" title="ATOM Feed" /> <!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>(NestJS) ValidationPipe() | Den Shin’s Blog</title>
+<meta name="generator" content="Jekyll v4.1.1" />
+<meta property="og:title" content="(NestJS) ValidationPipe()" />
+<meta name="author" content="Shin Yeong Hyeon" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="parseInt(1) === +1" />
+<meta property="og:description" content="parseInt(1) === +1" />
+<link rel="canonical" href="http://localhost:8000/third-post" />
+<meta property="og:url" content="http://localhost:8000/third-post" />
+<meta property="og:site_name" content="Den Shin’s Blog" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2020-11-10T00:00:00+09:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="(NestJS) ValidationPipe()" />
+<script type="application/ld+json">
+{"url":"http://localhost:8000/third-post","author":{"@type":"Person","name":"Shin Yeong Hyeon"},"headline":"(NestJS) ValidationPipe()","datePublished":"2020-11-10T00:00:00+09:00","dateModified":"2020-11-10T00:00:00+09:00","description":"parseInt(1) === +1","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:8000/third-post"},"@type":"BlogPosting","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+</head>
+
+<body>
+  <div id="wrapper">
+    <header>
+  <div>
+    <a href="/">
+    
+    <h1>Shin Yeong-Hyeon (a.k.a Den-shin)@teamO2:~$</h1>
+    </a>
+    <div class="header-links">
+      <a href="/about"><h2 class="header-link">About</h2></a>
+<a href="/posts"><h2 class="header-link">Posts</h2></a>
+<a href="https://github.com/shinYeongHyeon"><h2 class="header-link">GitHub</h2></a>
+
+    </div>
+  </div>
+</header>
+
+    <div class="container">
+      <section id="main_content">
+        <article>
+  <h2>(NestJS) ValidationPipe()</h2>
+  <time datetime="2020-11-10T00:00:00+09:00" class="by-line"><small>2020-11-10 (Tue)</small></time>
+  <hr />
+  <p>NestJS 에서는 AutoValidation 기능을 해주는 사랑스러운 아이가 있다.<br />
+<em>@nestjs/common</em> 에 있는 <em><a href="https://docs.nestjs.com/techniques/validation">ValidationPipe</a></em> 라는 아이.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">app</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">NestFactory</span><span class="p">.</span><span class="nx">create</span><span class="p">(</span><span class="nx">AppModule</span><span class="p">);</span>
+  <span class="nx">app</span><span class="p">.</span><span class="nx">useGlobalPipes</span><span class="p">(</span>
+    <span class="k">new</span> <span class="nx">ValidationPipe</span><span class="p">({</span>
+      <span class="na">whitelist</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+      <span class="na">forbidNonWhitelisted</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+      <span class="na">transform</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="p">}),</span>
+  <span class="p">);</span>
+</code></pre></div></div>
+
+<p>위와 같이 사용하는데, <code class="language-plaintext highlighter-rouge">useGlobalPipes</code> 는 전역적으로 검사를 시키겠다는 의미로 받아들이면 된다.<br />
+<code class="language-plaintext highlighter-rouge">ValidationPipe</code> 에서 주로 사용하는 옵션은 위와 같은데 하나 씩 살짝 맛보자면</p>
+<ul>
+  <li>
+    <p><strong>whitelist</strong>: DTO 의 검증을 해준다, 예를 들어 DTO 에 <code class="language-plaintext highlighter-rouge">title</code>이라는 속성이 String 이어야 한다면 <code class="language-plaintext highlighter-rouge">@IsString()</code> 과 함께 쓰여 실제로 들어온것이 스트링인지 확인해주고, 아니라면 오류를 뱉어내준다.</p>
+  </li>
+  <li>
+    <p><strong>forbidNonWhitelisted</strong>: DTO 에 없는 것을 알려준다, 의도된 공격을 막을 수 있다.</p>
+  </li>
+  <li><strong>transform</strong>: 이 아이가 난 좋은데, 예를 들어 Get 요청시에 들어오는 값들은 모두 스트링이 되는데 id 와 같은 것의 경우에는 Number 형의 경우가 많다. 이럴 때 숫자로만 이루어진 경우에는 자동으로 변환해주는 등 타입에 맞게 알아서 변환해준다.</li>
+  <li><strong>skipMissingProperties</strong>: 권장하진 않지만, 유효성검 사를 모두 패스하고 싶을때 사용한다.</li>
+</ul>
+
+<p><img src="../assets/validationPipe.png" alt="" /></p>
+
+<p>위와 같이 자동으로 유효성검사해주고 알아서 에러를 뱉어내주니 얼마나 감사한가…<br />
+<del>사랑해</del></p>
+
+</article>
+
+      </section>
+    </div>
+  </div>
+
+   <footer>
+    <span>
+        <b>Shin Yeong Hyeon</b>
+    </span>
+    
+    <span>© 2020</span>
+    <br>
+</footer>
+
+
+  
+</body>
+
+</html>
