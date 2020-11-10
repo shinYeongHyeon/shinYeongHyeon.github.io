@@ -9,7 +9,7 @@ tags:
   - Blog
 ---
 
-NestJS 에서는 AutoValidation 기능을 해주는 사랑스러운 아이가 있다.  
+NestJS 에서는 AutoValidation 기능을 해주는 사랑스러운 아이가 있다..!  
 *@nestjs/common* 에 있는 *[ValidationPipe](https://docs.nestjs.com/techniques/validation)* 라는 아이.  
 
 ```javascript

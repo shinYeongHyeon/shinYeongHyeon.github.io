@@ -4,7 +4,7 @@ title: About
 ---
 
 <p align="center">
-  <img width="277" height="360" src="./assets/den.jpeg">
+  <img width="277" height="360" src="./assets/den.png">
 </p>
 
 ---

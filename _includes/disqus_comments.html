@@ -1,13 +1,3 @@
----
-layout: default
----
-
-<article>
-  <h2>{{ page.title }}</h2>
-  <time datetime="{{ page.date | date_to_xmlschema }}" class="by-line"><small>{{ page.date | date: "%F (%a)" }}</small></time>
-  <hr />
-  {{ content }}
-</article>
 <div id="disqus_thread"></div>
 <script>
 
@@ -28,4 +18,3 @@ layout: default
   })();
 </script>
 <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-

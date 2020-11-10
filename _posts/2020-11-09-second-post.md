@@ -22,5 +22,14 @@ parseInt 의 약어가 존재한다는 것을 알아내게 되는 일이 있었�
 실무나 프로젝트에 쓸 것 같지는 않다...
 
 혹시 이에 대해서 이유/원인을 알고 있는 천사같은 분이 있으시다면,  
-귀찮음을 무릎써주실 수 있다면,  
-**den.shin.dev@gmail.com** 으로 알려주시면 너무 감사하는 마음으로 살겠습니다-
+댓글로 친절히 알려주시면 ~~사랑해요~~  
+
+***
+(추가)  
+
+브라우저별로 속도가 다르다는 제보와 일부 연산 값이 다르다는 제보를 받았다.  
+어려운 웹개발의 세계..
+
+[브라우저 속도](http://phrogz.net/js/string_to_number.html)
+
+[결과 값](https://stackoverflow.com/questions/17106681/parseint-vs-unary-plus-when-to-use-which/17106702#17106702)

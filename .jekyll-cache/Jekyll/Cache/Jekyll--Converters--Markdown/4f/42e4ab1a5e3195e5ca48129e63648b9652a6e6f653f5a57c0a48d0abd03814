@@ -1,5 +1,4 @@
-I"�
-<p>NestJS 에서는 AutoValidation 기능을 해주는 사랑스러운 아이가 있다.<br />
+I"A<p>NestJS 에서는 AutoValidation 기능을 해주는 사랑스러운 아이가 있다..!<br />
 <em>@nestjs/common</em> 에 있는 <em><a href="https://docs.nestjs.com/techniques/validation">ValidationPipe</a></em> 라는 아이.</p>
 
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">app</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">NestFactory</span><span class="p">.</span><span class="nx">create</span><span class="p">(</span><span class="nx">AppModule</span><span class="p">);</span>
@@ -25,6 +24,8 @@
   <li><strong>skipMissingProperties</strong>: 권장하진 않지만, 유효성검 사를 모두 패스하고 싶을때 사용한다.</li>
 </ul>
 
-<p>위와 같이 자동으로 유효성검사해주고 알아서 에러를 뱉어내주니 얼마나 감사한가…
+<p><img src="../assets/validationPipe.png" alt="" /></p>
+
+<p>위와 같이 자동으로 유효성검사해주고 알아서 에러를 뱉어내주니 얼마나 감사한가…<br />
 <del>사랑해</del></p>
 :ET

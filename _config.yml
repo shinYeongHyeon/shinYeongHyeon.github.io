@@ -13,6 +13,16 @@ permalink: /:title
 paginate: 3
 paginate_path: /page/:num/
 
+# 댓글
+comments:
+  provider: "disqus"
+  disqus:
+    shortname: "shinyeonghyeon-github-io"
+disqus_shortname: "shinyeonghyeon-github-io"
+disqus_url: "shinyeonghyeon-github-io.disqus.com"
+disqus_id: "shinyeonghyeon-github-io"
+
+
 defaults:
   -
     scope:
@@ -20,6 +30,11 @@ defaults:
       type: "posts"
     values:
       layout: "post"
+      author_profile: true
+      read_time: true
+      comments: true
+      share: true
+      related: true
 
 future: true
 plugins:
@@ -37,3 +52,4 @@ footer:
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
       url: "https://github.com/shinYeongHyeon"
+
