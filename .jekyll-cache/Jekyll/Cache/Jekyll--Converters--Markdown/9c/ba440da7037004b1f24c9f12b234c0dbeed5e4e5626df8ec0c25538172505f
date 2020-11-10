@@ -1,0 +1,21 @@
+I"f<p>NestJS 에서는 AutoValidation 기능을 해주는 사랑스러운 아이가 있다.</p>
+
+<p><a href="https://docs.nestjs.com/techniques/validation">NestJS Document</a></p>
+
+<p>parseInt 의 약어가 존재한다는 것을 알아내게 되는 일이 있었다.<br />
+<code class="language-plaintext highlighter-rouge">parseInt(1)</code> 은 <code class="language-plaintext highlighter-rouge">+'1'</code> 과 동일하다는 것이다.<br />
+이 이유에 대해서는 자세히 알지는 못해서 이래저래 알아보고 동료직원과 고민도 해봤는데,<br />
+뚜렷한 근거에 대해서는 알지 못했다.</p>
+
+<p>이 글을 보고 <em>으잉?</em> 하는 사람들도 있을 것 같아서 아래 사진을 첨부해본다.<br />
+<del>나만 몰랐던 거 아니라고 해주세요</del></p>
+
+<p><img src="../assets/parseInt.png" alt="" /></p>
+
+<p>그런데 <code class="language-plaintext highlighter-rouge">+1</code> 표현을 처음 봐서, 익숙치 않아서 그럴진 몰라도 가독성이 그리 좋아보이진 않아서<br />
+실무나 프로젝트에 쓸 것 같지는 않다…</p>
+
+<p>혹시 이에 대해서 이유/원인을 알고 있는 천사같은 분이 있으시다면,<br />
+귀찮음을 무릎써주실 수 있다면,<br />
+<strong>den.shin.dev@gmail.com</strong> 으로 알려주시면 너무 감사하는 마음으로 살겠습니다-</p>
+:ET
