@@ -13,6 +13,10 @@
 <lastmod>2020-11-10T00:00:00+09:00</lastmod>
 </url>
 <url>
+<loc>http://localhost:8000/fourth-post</loc>
+<lastmod>2020-11-13T00:00:00+09:00</lastmod>
+</url>
+<url>
 <loc>http://localhost:8000/404</loc>
 </url>
 <url>
@@ -23,5 +27,8 @@
 </url>
 <url>
 <loc>http://localhost:8000/posts</loc>
+</url>
+<url>
+<loc>http://localhost:8000/page/2/</loc>
 </url>
 </urlset>

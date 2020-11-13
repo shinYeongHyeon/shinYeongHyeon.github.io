@@ -1,4 +1,19 @@
-I"?<p>NestJS 에서는 AutoValidation 기능을 해주는 사랑스러운 아이가 있다.<br />
+I"U
+<hr />
+<p>title:  “(NestJS) ValidationPipe()”
+excerpt: “parseInt(1) === +1”<br />
+last_modified_at: 2020-11-10
+reference: https://docs.nestjs.com/techniques/validation<br />
+categories:</p>
+<ul>
+  <li>Blog
+tags:</li>
+  <li>
+    <h2 id="blog">Blog</h2>
+  </li>
+</ul>
+
+<p>NestJS 에서는 AutoValidation 기능을 해주는 사랑스러운 아이가 있다..!<br />
 <em>@nestjs/common</em> 에 있는 <em><a href="https://docs.nestjs.com/techniques/validation">ValidationPipe</a></em> 라는 아이.</p>
 
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">app</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">NestFactory</span><span class="p">.</span><span class="nx">create</span><span class="p">(</span><span class="nx">AppModule</span><span class="p">);</span>

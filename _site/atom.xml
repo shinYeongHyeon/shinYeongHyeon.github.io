@@ -12,6 +12,38 @@
     </author>
     
       <item>
+        <title>(Database) Null 에 대한 고찰</title>
+        <description>&lt;p&gt;개발/코딩을 하면서 변수 초기화를 일반적으로 null 로 진행을 하는 것이 습관이 되었다.&lt;br /&gt;
+Null Check 를 통해서 로직을 짜는 것이 가독성도 좋고, 문맥 파악도 용이하기 때문이다.&lt;br /&gt;
+그러다 보니 습관적으로 데이터베이스도 기본값을 null 로 설정하거나 들어오지 않은 값에 대해서도 null 로 하는 경우가 있는데,&lt;br /&gt;
+개인적으로 그런 습관은 나쁘다고 생각이 든다.&lt;/p&gt;
+
+&lt;p&gt;데이터베이스에서 null 은 내가 생각하기엔 여러가지 의미를 내포하고 있다고 본다.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;1. 값이 들어오지 않았다.&lt;/strong&gt;&lt;br /&gt;
+&lt;strong&gt;2. 값이 없다.&lt;/strong&gt;&lt;br /&gt;
+&lt;strong&gt;3. 로직상 오류가 존재한다.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;예를 들어, 통계를 내거나 데이터 분석을 하려고 하는데 유저의 취미가 null 이라고 보자.&lt;br /&gt;
+이 데이터는 어떻게 해석을 해야할까 ?&lt;br /&gt;
+취미가 없는걸까 ? 아니면 오류 인가 ? 세팅을 하지 않을 걸까 ?&lt;br /&gt;
+이렇게 많은 식으로 해석이 될 수 있는 것은 딱 보기에도 좋아보이지 않는다.&lt;/p&gt;
+
+&lt;p&gt;또한, Null 연산에 대해서도 문제가 있다. 1+Null &amp;gt; Null, Null * 1 &amp;gt; Null, Null + Null &amp;gt; Null 로 취급이 된다.&lt;br /&gt;
+이 때문에 연산시에 의도치 않은 잘못된 데이터를 뽑아 낼 수 있다.&lt;/p&gt;
+
+&lt;p&gt;그리고 최종적으로는 DBMS 마다 다르게 취급하는 것이 문제다.&lt;/p&gt;
+
+&lt;p&gt;이렇기 때문에 Null 사용은 나는 가급적 지양하고, 빈 값같은 경우를 사용해야 하는 경우에는&lt;br /&gt;
+그 의미를 그대로 가질 수 없는 열은 다른 열과 조합으로 의미를 가지게 하는 것이 좋은 것 같다.&lt;/p&gt;
+</description>
+        <pubDate>Fri, 13 Nov 2020 00:00:00 +0900</pubDate>
+        <link>http://localhost:8000//fourth-post</link>
+        <link href="http://localhost:8000/fourth-post"/>
+        <guid isPermaLink="true">http://localhost:8000/fourth-post</guid>
+      </item>
+    
+      <item>
         <title>(NestJS) ValidationPipe()</title>
         <description>&lt;p&gt;NestJS 에서는 AutoValidation 기능을 해주는 사랑스러운 아이가 있다..!&lt;br /&gt;
 &lt;em&gt;@nestjs/common&lt;/em&gt; 에 있는 &lt;em&gt;&lt;a href=&quot;https://docs.nestjs.com/techniques/validation&quot;&gt;ValidationPipe&lt;/a&gt;&lt;/em&gt; 라는 아이.&lt;/p&gt;
