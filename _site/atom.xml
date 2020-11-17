@@ -12,6 +12,26 @@
     </author>
     
       <item>
+        <title>(ReactJS) 컴포넌트 생명주기</title>
+        <description>&lt;p&gt;블로그까지 만들면서 제대로 공부를 시작하기로 했고, 그 일련의 작업들로 기초부터 다지고 있다.
+그래서, ReactJS 를 공부를 시작했는데 그 시작에 앞서 ReactJS 에서 가장 많이 사용되는 거로 알고 있는 &lt;strong&gt;Component&lt;/strong&gt;의 생명주기에 대해서 알아보자.&lt;/p&gt;
+
+&lt;p&gt;핵심은 &lt;strong&gt;render()&lt;/strong&gt; 함수 인데, 이 함수가 &lt;em&gt;가상돔에 HTML 코드를 써준다&lt;/em&gt; 라고 생각하면 된다. &amp;lt;- &lt;em&gt;ReactJS 의 개념? 이라고 이해했다.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;render()&lt;/strong&gt; 를 기준으로 전/후로 나뉘고, 간략하게 표현하자면 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;mount -&amp;gt; render -&amp;gt; mounted&lt;/code&gt; 와 같다. &lt;em&gt;(unmount 는 제외하고.)&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;이를 함수로 자세히보자면 마운트되면서 &lt;strong&gt;constructor()&lt;/strong&gt; 가  &lt;strong&gt;render()&lt;/strong&gt; 되기전에 실행되며, &lt;strong&gt;render()&lt;/strong&gt; 되고 나면 &lt;strong&gt;componentDidMount()&lt;/strong&gt;가 실행된다.
+글자 그대로 &lt;strong&gt;마운트 되고 나서~&lt;/strong&gt; 이다.&lt;/p&gt;
+
+&lt;p&gt;가장 기초적인 것들을 알아보았고, 이후에는 &lt;strong&gt;Updating&lt;/strong&gt; 과 관련된 이야기를 풀어보면서, &lt;strong&gt;State&lt;/strong&gt;에 대해서도 알아보도록 하자.&lt;/p&gt;
+</description>
+        <pubDate>Wed, 18 Nov 2020 00:00:00 +0900</pubDate>
+        <link>http://localhost:8000//fifth-post</link>
+        <link href="http://localhost:8000/fifth-post"/>
+        <guid isPermaLink="true">http://localhost:8000/fifth-post</guid>
+      </item>
+    
+      <item>
         <title>(Database) Null 에 대한 고찰</title>
         <description>&lt;p&gt;개발/코딩을 하면서 변수 초기화를 일반적으로 null 로 진행을 하는 것이 습관이 되었다.&lt;br /&gt;
 Null Check 를 통해서 로직을 짜는 것이 가독성도 좋고, 문맥 파악도 용이하기 때문이다.&lt;br /&gt;

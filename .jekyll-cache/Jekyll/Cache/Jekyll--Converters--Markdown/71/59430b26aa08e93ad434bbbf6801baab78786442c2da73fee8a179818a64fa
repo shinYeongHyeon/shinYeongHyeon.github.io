@@ -1,0 +1,7 @@
+I"-<p>블로그까지 만들면서 제대로 공부를 시작하기로 했고, 그 일련의 작업들로 기초부터 다지고 있다.
+그래서, ReactJS 를 공부를 시작했는데 그 시작에 앞서 ReactJS 에서 가장 많이 사용되는 거로 알고 있는 <strong>Component</strong>의 생명주기에 대해서 알아보자.</p>
+
+<p>핵심은 <strong>render()</strong> 함수 인데, 이 함수가 <em>가상돔에 HTML 코드를 써준다</em> 라고 생각하면 된다. &lt;- <em>ReactJS 의 개념? 이라고 이해했다.</em></p>
+
+<p><strong>render()</strong> 를 기준으로 전/후로 나뉘고, 간략하게 표현하자면 <code class="language-plaintext highlighter-rouge">mount -&gt; render -&gt; mounted</code> 와 같다. <em>생성자와 소멸자(unmounted)는 제외하고.</em></p>
+:ET
