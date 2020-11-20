@@ -18,13 +18,15 @@
 </script>
 <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 <script>
-    setTimeout(() => {
-      this.document.getElementsByClassName('sidebar')[0].style.height = this.document.getElementsByClassName('container')[0].scrollHeight + 'px';
-    }, 1000);
-    setTimeout(() => {
-      this.document.getElementsByClassName('sidebar')[0].style.height = this.document.getElementsByClassName('container')[0].scrollHeight + 'px';
-    }, 2000);
-    setTimeout(() => {
-      this.document.getElementsByClassName('sidebar')[0].style.height = this.document.getElementsByClassName('container')[0].scrollHeight + 'px';
-    }, 5000);
+    if (this.window.innerWidth > 600) {
+      setTimeout(() => {
+        this.document.getElementsByClassName('sidebar')[0].style.height = this.document.getElementsByClassName('container')[0].scrollHeight + 'px';
+      }, 1000);
+      setTimeout(() => {
+        this.document.getElementsByClassName('sidebar')[0].style.height = this.document.getElementsByClassName('container')[0].scrollHeight + 'px';
+      }, 2000);
+      setTimeout(() => {
+        this.document.getElementsByClassName('sidebar')[0].style.height = this.document.getElementsByClassName('container')[0].scrollHeight + 'px';
+      }, 5000);
+    }
 </script>
