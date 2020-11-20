@@ -11,5 +11,14 @@
 
 	<div class="post-content">
 		{{ content }}
+		<br>
+		<br>
+		{% if site.disqus-shortname %}
+		<div id="post-disqus" class="container">
+			{% include disqus.html %}
+		</div>
+		{% endif %}
 	</div>
 </article>
+
+

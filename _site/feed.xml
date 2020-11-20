@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="http://localhost:8000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:8000/" rel="alternate" type="text/html" /><updated>2020-11-20T23:50:16+09:00</updated><id>http://localhost:8000/feed.xml</id><title type="html">Den</title><subtitle>By. Shin YeongHyeon</subtitle><entry><title type="html">(ReactJS) 컴포넌트 생명주기 2</title><link href="http://localhost:8000/reactjs/2020/11/19/sixth-post.html" rel="alternate" type="text/html" title="(ReactJS) 컴포넌트 생명주기 2" /><published>2020-11-19T00:00:00+09:00</published><updated>2020-11-19T00:00:00+09:00</updated><id>http://localhost:8000/reactjs/2020/11/19/sixth-post</id><content type="html" xml:base="http://localhost:8000/reactjs/2020/11/19/sixth-post.html">&lt;p&gt;이전 포스팅에서 ReactJS 의 Class Component 를 살펴보면서 가장 기초적인 부분들을 확인해 보았다.&lt;br /&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="http://localhost:8000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:8000/" rel="alternate" type="text/html" /><updated>2020-11-21T00:26:11+09:00</updated><id>http://localhost:8000/feed.xml</id><title type="html">Den</title><subtitle>By. Shin YeongHyeon</subtitle><entry><title type="html">(ReactJS) 컴포넌트 생명주기 2</title><link href="http://localhost:8000/reactjs/2020/11/19/sixth-post.html" rel="alternate" type="text/html" title="(ReactJS) 컴포넌트 생명주기 2" /><published>2020-11-19T00:00:00+09:00</published><updated>2020-11-19T00:00:00+09:00</updated><id>http://localhost:8000/reactjs/2020/11/19/sixth-post</id><content type="html" xml:base="http://localhost:8000/reactjs/2020/11/19/sixth-post.html">&lt;p&gt;이전 포스팅에서 ReactJS 의 Class Component 를 살펴보면서 가장 기초적인 부분들을 확인해 보았다.&lt;br /&gt;
 이번에는 &lt;strong&gt;Updating&lt;/strong&gt;과 &lt;strong&gt;State&lt;/strong&gt; 에 대해 알아보도록 하자.&lt;/p&gt;
 
 &lt;p&gt;ReactJS 에서는 &lt;strong&gt;State&lt;/strong&gt; 라는 것을 가지고 있는데, 이 아이는 유동적인 데이터를 사용할 때 써먹는다.&lt;br /&gt;
@@ -74,7 +74,7 @@ Null Check 를 통해서 로직을 짜는 것이 가독성도 좋고, 문맥 파
   &lt;li&gt;&lt;strong&gt;skipMissingProperties&lt;/strong&gt;: 권장하진 않지만, 유효성검 사를 모두 패스하고 싶을때 사용한다.&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;&lt;img src=&quot;../assets/validationPipe.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/validationPipe.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;위와 같이 자동으로 유효성검사해주고 알아서 에러를 뱉어내주니 얼마나 감사한가…&lt;br /&gt;
 &lt;del&gt;사랑해&lt;/del&gt;&lt;/p&gt;</content><author><name></name></author><summary type="html">ValidationPipe</summary></entry><entry><title type="html">(JavaScript) parseInt 의 약어</title><link href="http://localhost:8000/javascript/2020/11/09/second-post.html" rel="alternate" type="text/html" title="(JavaScript) parseInt 의 약어" /><published>2020-11-09T00:00:00+09:00</published><updated>2020-11-09T00:00:00+09:00</updated><id>http://localhost:8000/javascript/2020/11/09/second-post</id><content type="html" xml:base="http://localhost:8000/javascript/2020/11/09/second-post.html">&lt;p&gt;parseInt 의 약어가 존재한다는 것을 알아내게 되는 일이 있었다.&lt;br /&gt;
@@ -85,7 +85,7 @@ Null Check 를 통해서 로직을 짜는 것이 가독성도 좋고, 문맥 파
 &lt;p&gt;이 글을 보고 &lt;em&gt;으잉?&lt;/em&gt; 하는 사람들도 있을 것 같아서 아래 사진을 첨부해본다.&lt;br /&gt;
 &lt;del&gt;나만 몰랐던 거 아니라고 해주세요&lt;/del&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;../assets/parseInt.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/parseInt.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;그런데 &lt;code class=&quot;highlighter-rouge&quot;&gt;+1&lt;/code&gt; 표현을 처음 봐서, 익숙치 않아서 그럴진 몰라도 가독성이 그리 좋아보이진 않아서&lt;br /&gt;
 실무나 프로젝트에 쓸 것 같지는 않다…&lt;/p&gt;

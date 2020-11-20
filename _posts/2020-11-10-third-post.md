@@ -30,7 +30,7 @@ const app = await NestFactory.create(AppModule);
 * **transform**: 이 아이가 난 좋은데, 예를 들어 Get 요청시에 들어오는 값들은 모두 스트링이 되는데 id 와 같은 것의 경우에는 Number 형의 경우가 많다. 이럴 때 숫자로만 이루어진 경우에는 자동으로 변환해주는 등 타입에 맞게 알아서 변환해준다.
 * **skipMissingProperties**: 권장하진 않지만, 유효성검 사를 모두 패스하고 싶을때 사용한다.
 
-![](../assets/validationPipe.png)
+![](/assets/validationPipe.png)
 
 위와 같이 자동으로 유효성검사해주고 알아서 에러를 뱉어내주니 얼마나 감사한가...  
 ~~사랑해~~
