@@ -21,11 +21,13 @@
 	    {% if node.title != null %}
 	      {% if node.layout == "page" %}
 		    {% if node.title != 'About' %}
+		    	{% if node.title != 'Pygments-Css' %}
 				<li>
 					<a class="nav-item" href="{{ node.url }}">
 						{{ node.title }}
 					</a>
 				</li>
+		    	{% endif %}
 		    {% endif %}
 	      {% endif %}
 	    {% endif %}
