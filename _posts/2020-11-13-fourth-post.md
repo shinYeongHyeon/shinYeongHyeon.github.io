@@ -1,6 +1,6 @@
 ---
 title:  "(Database) Null 에 대한 고찰"
-excerpt: "parseInt(1) === +1"  
+excerpt: "Null 에 대한 고찰"  
 last_modified_at: 2020-11-13
 reference: http://www.databaser.net/moniwiki/wiki.php/NULL%EC%9D%98%EC%82%AC%EC%9A%A9  
 categories:

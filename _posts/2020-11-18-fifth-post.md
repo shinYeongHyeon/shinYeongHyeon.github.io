@@ -1,6 +1,6 @@
 ---
 title:  "(ReactJS) 컴포넌트 생명주기"
-excerpt: "parseInt(1) === +1"
+excerpt: "ReactJS 컴포넌트 생명주기"
 last_modified_at: 2020-11-18
 reference: https://ko.reactjs.org/docs/react-component.html
 categories:

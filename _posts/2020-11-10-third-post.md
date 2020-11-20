@@ -1,6 +1,6 @@
 ---
 title:  "(NestJS) ValidationPipe()"
-excerpt: "parseInt(1) === +1"  
+excerpt: "ValidationPipe"  
 last_modified_at: 2020-11-10
 reference: https://docs.nestjs.com/techniques/validation  
 categories:
