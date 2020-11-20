@@ -1,0 +1,49 @@
+<div class="sidebar-item sidebar-header">
+	<div class='sidebar-brand'>
+		<a href="/" style="text-decoration: none">{{ site.title }} </a>
+	</div>
+	<a href="https://github.com/{{ site.github | cgi_escape | escape }}" title="{{ social.github | escape }}">
+		<img src="/assets/github.png" width="20" alt="github">
+	</a>
+</div>
+
+<div class="sidebar-item sidebar-nav">
+	<ul class="nav">
+      <li class="nav-title">Pages</li>
+		<li>
+			<a class="nav-item" href="/about">About</a>
+		</li>
+	  <li>
+	  	<a class="nav-item" href="/articles">Articles</a>
+	  </li>
+	  {% assign pages_list = site.pages %}
+	  {% for node in pages_list %}
+	    {% if node.title != null %}
+	      {% if node.layout == "page" %}
+		    {% if node.title != 'About' %}
+				<li>
+					<a class="nav-item" href="{{ node.url }}">
+						{{ node.title }}
+					</a>
+				</li>
+		    {% endif %}
+	      {% endif %}
+	    {% endif %}
+	  {% endfor %}
+	</ul>
+</div>
+
+<div class="sidebar-item sidebar-nav">
+  	<ul class="nav">
+			<li class="nav-title">Categories</li>
+	    {% for category in site.categories %}
+	    <li>
+	    	<a class="nav-item" href="{{ root_url }}/{{ site.category_dir }}#{{ category | first }}">
+				<span class="name">{{ category | first }}</span>
+				<span class="badge">{{ category | last | size }}</span>
+	    	</a>
+ 		</li>
+	    {% endfor %}
+	  </nav>
+	</ul>
+</div>

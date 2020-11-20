@@ -1,13 +1,10 @@
 ---
+layout: post
+date: 2020-11-19
 title:  "(ReactJS) 컴포넌트 생명주기 2"
 excerpt: "React JS 컴포넌트 생명주기 2"
-last_modified_at: 2020-11-19
 reference: https://ko.reactjs.org/docs/react-component.html
-categories:
-  - Blog
-tags:
-  - Blog
-  - ReactJS
+categories: reactJS
 ---
 
 이전 포스팅에서 ReactJS 의 Class Component 를 살펴보면서 가장 기초적인 부분들을 확인해 보았다.  

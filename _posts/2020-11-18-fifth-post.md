@@ -1,13 +1,10 @@
 ---
+layout: post
+date: 2020-11-18
 title:  "(ReactJS) 컴포넌트 생명주기"
 excerpt: "ReactJS 컴포넌트 생명주기"
-last_modified_at: 2020-11-18
 reference: https://ko.reactjs.org/docs/react-component.html
-categories:
-  - Blog
-tags:
-  - Blog
-  - ReactJS
+categories: reactJS
 ---
 
 블로그까지 만들면서 제대로 공부를 시작하기로 했고, 그 일련의 작업들로 기초부터 다지고 있다.

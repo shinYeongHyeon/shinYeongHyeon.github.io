@@ -1,13 +1,10 @@
 ---
+layout: post
+date: 2020-11-13
 title:  "(Database) Null 에 대한 고찰"
 excerpt: "Null 에 대한 고찰"  
-last_modified_at: 2020-11-13
 reference: http://www.databaser.net/moniwiki/wiki.php/NULL%EC%9D%98%EC%82%AC%EC%9A%A9  
-categories:
-  - Blog
-tags:
-  - Blog
-  - Database
+categories: database
 ---
 
 개발/코딩을 하면서 변수 초기화를 일반적으로 null 로 진행을 하는 것이 습관이 되었다.  

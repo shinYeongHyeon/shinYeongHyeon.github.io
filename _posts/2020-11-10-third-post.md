@@ -1,12 +1,10 @@
 ---
+layout: post
+date: 2020-11-10
 title:  "(NestJS) ValidationPipe()"
 excerpt: "ValidationPipe"  
-last_modified_at: 2020-11-10
 reference: https://docs.nestjs.com/techniques/validation  
-categories:
-  - Blog
-tags:
-  - Blog
+categories: nestJS
 ---
 
 NestJS 에서는 AutoValidation 기능을 해주는 사랑스러운 아이가 있다..!  

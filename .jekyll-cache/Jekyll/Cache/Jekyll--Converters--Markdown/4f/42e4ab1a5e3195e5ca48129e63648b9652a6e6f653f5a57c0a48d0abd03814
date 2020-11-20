@@ -1,4 +1,5 @@
-I"A<p>NestJS 에서는 AutoValidation 기능을 해주는 사랑스러운 아이가 있다..!<br />
+I"�
+<p>NestJS 에서는 AutoValidation 기능을 해주는 사랑스러운 아이가 있다..!<br />
 <em>@nestjs/common</em> 에 있는 <em><a href="https://docs.nestjs.com/techniques/validation">ValidationPipe</a></em> 라는 아이.</p>
 
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">app</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">NestFactory</span><span class="p">.</span><span class="nx">create</span><span class="p">(</span><span class="nx">AppModule</span><span class="p">);</span>
@@ -11,11 +12,11 @@
   <span class="p">);</span>
 </code></pre></div></div>
 
-<p>위와 같이 사용하는데, <code class="language-plaintext highlighter-rouge">useGlobalPipes</code> 는 전역적으로 검사를 시키겠다는 의미로 받아들이면 된다.<br />
-<code class="language-plaintext highlighter-rouge">ValidationPipe</code> 에서 주로 사용하는 옵션은 위와 같은데 하나 씩 살짝 맛보자면</p>
+<p>위와 같이 사용하는데, <code class="highlighter-rouge">useGlobalPipes</code> 는 전역적으로 검사를 시키겠다는 의미로 받아들이면 된다.<br />
+<code class="highlighter-rouge">ValidationPipe</code> 에서 주로 사용하는 옵션은 위와 같은데 하나 씩 살짝 맛보자면</p>
 <ul>
   <li>
-    <p><strong>whitelist</strong>: DTO 의 검증을 해준다, 예를 들어 DTO 에 <code class="language-plaintext highlighter-rouge">title</code>이라는 속성이 String 이어야 한다면 <code class="language-plaintext highlighter-rouge">@IsString()</code> 과 함께 쓰여 실제로 들어온것이 스트링인지 확인해주고, 아니라면 오류를 뱉어내준다.</p>
+    <p><strong>whitelist</strong>: DTO 의 검증을 해준다, 예를 들어 DTO 에 <code class="highlighter-rouge">title</code>이라는 속성이 String 이어야 한다면 <code class="highlighter-rouge">@IsString()</code> 과 함께 쓰여 실제로 들어온것이 스트링인지 확인해주고, 아니라면 오류를 뱉어내준다.</p>
   </li>
   <li>
     <p><strong>forbidNonWhitelisted</strong>: DTO 에 없는 것을 알려준다, 의도된 공격을 막을 수 있다.</p>

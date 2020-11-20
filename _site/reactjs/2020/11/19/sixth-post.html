@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1"><link type="application/atom+xml" rel="alternate" href="http://localhost:8000/feed.xml" title="Den" /></head>
+<style>@import url(/public/css/syntax/monokai.css);</style>
+  <title>Den's Blog</title>
+  <!-- <link href="/public/css/bootstrap.min.css" rel="stylesheet"> -->
+
+  <link href="/public/css/style.css" rel="stylesheet">
+  <body>
+  	<div class="container"> 
+		<div class="sidebar">
+			<div class="sidebar-item sidebar-header">
+	<div class='sidebar-brand'>
+		<a href="/" style="text-decoration: none">Den </a>
+	</div>
+	<a href="https://github.com/shinYeongHyeon" title="">
+		<img src="/assets/github.png" width="20" alt="github">
+	</a>
+</div>
+
+<div class="sidebar-item sidebar-nav">
+	<ul class="nav">
+      <li class="nav-title">Pages</li>
+		<li>
+			<a class="nav-item" href="/about">About</a>
+		</li>
+	  <li>
+	  	<a class="nav-item" href="/articles">Articles</a>
+	  </li>
+	  
+	  
+	    
+	  
+	    
+	      
+		    
+	      
+	    
+	  
+	    
+	      
+	    
+	  
+	    
+	      
+	    
+	  
+	    
+	      
+		    
+				<li>
+					<a class="nav-item" href="/bio">
+						Bio
+					</a>
+				</li>
+		    
+	      
+	    
+	  
+	    
+	      
+	    
+	  
+	    
+	  
+	    
+	  
+	</ul>
+</div>
+
+<div class="sidebar-item sidebar-nav">
+  	<ul class="nav">
+			<li class="nav-title">Categories</li>
+	    
+	    <li>
+	    	<a class="nav-item" href="/category/#blog">
+				<span class="name">blog</span>
+				<span class="badge">1</span>
+	    	</a>
+ 		</li>
+	    
+	    <li>
+	    	<a class="nav-item" href="/category/#javascript">
+				<span class="name">javascript</span>
+				<span class="badge">1</span>
+	    	</a>
+ 		</li>
+	    
+	    <li>
+	    	<a class="nav-item" href="/category/#nestJS">
+				<span class="name">nestJS</span>
+				<span class="badge">1</span>
+	    	</a>
+ 		</li>
+	    
+	    <li>
+	    	<a class="nav-item" href="/category/#database">
+				<span class="name">database</span>
+				<span class="badge">1</span>
+	    	</a>
+ 		</li>
+	    
+	    <li>
+	    	<a class="nav-item" href="/category/#reactJS">
+				<span class="name">reactJS</span>
+				<span class="badge">2</span>
+	    	</a>
+ 		</li>
+	    
+	  </nav>
+	</ul>
+</div>
+
+		</div>
+		<div class="content">
+			<article class="post">
+	<header class="post-header">
+		<div class="post-title"> 
+			(ReactJS) 컴포넌트 생명주기 2
+		</div>
+		<time class="post-date dt-published" datetime="2020-11-19T00:00:00+09:00" itemprop="datePublished">2020/11/19
+		</time>		
+	</header>
+
+	<div class="post-content">
+		<p>이전 포스팅에서 ReactJS 의 Class Component 를 살펴보면서 가장 기초적인 부분들을 확인해 보았다.<br />
+이번에는 <strong>Updating</strong>과 <strong>State</strong> 에 대해 알아보도록 하자.</p>
+
+<p>ReactJS 에서는 <strong>State</strong> 라는 것을 가지고 있는데, 이 아이는 유동적인 데이터를 사용할 때 써먹는다.<br />
+기본적으로</p>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">this</span><span class="p">.</span><span class="nx">state</span> <span class="o">=</span> <span class="p">{};</span>
+</code></pre></div></div>
+<p>위와 같이 사용을 하는데, 이는 private 처럼 사용해야한다, 직접 조작해서는 안되는 뜻!<br />
+변경이 필요할 때는 마치 다른 클래스의 setter 를 사용하듯 <strong>setState</strong> 메소드를 활용해주어야 한다.<br />
+그 이유는 <strong>Updating</strong>과 관련이 있는데, state 가 변경될때마다 ReactJS는 렌더링을 다시 하는데,<br />
+<strong>setState</strong> 메소드를 사용하지 않는다면 이 부분을 감지 못하므로 re-렌더링이 이뤄지지 않는다.</p>
+
+<p>그래서 위 설명에서 말했 듯, <strong>Updating</strong>은 <strong>State</strong> 혹은 <strong>props</strong>가 변화할때 이뤄진다.<br />
+이때 기타 메소드들이 호출 된 후 (<a href="https://ko.reactjs.org/docs/react-component.html">자세한 것은 이리로</a>)<br />
+<strong>render()</strong> 과 호출되고 <strong>componentDidUpdate()</strong> 가 호출된다.<br />
+<strong>componentDidUpdate()</strong>는 유용하게 사용 가능한 <strong>props</strong> 들을 제공해주는데,<br />
+<strong>prevProps, prevState, snapshot</strong> 을 제공해준다.<br />
+전 상태를 비교할 수 있다는 것!
+개인적으로는 이것을 제공해주는게 너무 감사하다..</p>
+
+	</div>
+</article>
+
+		</div>
+	</div>
+  </body>
+</html>

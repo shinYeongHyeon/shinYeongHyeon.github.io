@@ -1,0 +1,9 @@
+I"%<h1 id="post-sample">post-sample</h1>
+<blockquote>
+  <p>Hello!</p>
+</blockquote>
+
+<p>This is code</p>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">print</span> <span class="s1">'hello world'</span>
+</code></pre></div></div>
+:ET

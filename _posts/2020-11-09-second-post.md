@@ -1,11 +1,9 @@
 ---
+layout: post
+date: 2020-11-09
 title:  "(JavaScript) parseInt 의 약어"
-excerpt: "parseInt(1) === +1"  
-last_modified_at: 2020-11-09
-categories:
-  - Blog
-tags:
-  - Blog
+excerpt: "parseInt(1) === +1" 
+categories: javascript
 ---
 
 parseInt 의 약어가 존재한다는 것을 알아내게 되는 일이 있었다.  
