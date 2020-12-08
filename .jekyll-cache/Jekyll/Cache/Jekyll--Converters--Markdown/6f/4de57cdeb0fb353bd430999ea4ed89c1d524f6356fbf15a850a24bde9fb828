@@ -1,0 +1,22 @@
+I"�<p>TypeScript 를 사용할 때, 들어오는 인자 중 Object 가 any 인 경우들이 있는데, 이것들이 interface 로 정의를 하고 싶을때가 있다.
+아니면 정의하는 척이라도 <del>any는 보기 좀 그래..</del>
+그럴 때 사용할 수 있는 것이 Indexable 이다.
+코드부터 보고 시작하자.</p>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kr">interface</span> <span class="nx">Indexable</span> <span class="p">{</span>
+  <span class="p">[</span><span class="nx">key</span><span class="p">:</span> <span class="nx">string</span><span class="p">]:</span> <span class="nx">any</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p><del>결국은 any..</del>
+이렇다 하더라도 유용하게 쓰일 곳이 많다.</p>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">indexable</span><span class="p">:</span> <span class="nx">Indexable</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">test1</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+  <span class="na">test2</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+  <span class="na">test3</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+<span class="p">};</span>
+
+<span class="nb">Object</span><span class="p">.</span><span class="nx">keys</span><span class="p">(</span><span class="nx">indexable</span><span class="p">).</span><span class="nx">forEach</span><span class="p">((</span><span class="nx">k</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">indexable</span><span class="p">[</span><span class="nx">k</span><span class="p">]));</span>
+</code></pre></div></div>
+:ET
