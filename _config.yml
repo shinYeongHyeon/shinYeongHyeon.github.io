@@ -34,6 +34,7 @@ highlighter-theme: monokai
 date_format: "%Y-%M-%D"
 plugins:
   - jekyll-feed
+  - jekyll-sitemap
 category_dir: category/
 tag_dir: tag/
 
