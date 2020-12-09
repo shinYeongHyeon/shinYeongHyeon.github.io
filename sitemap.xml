@@ -3,27 +3,52 @@ layout: null
 ---
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  {% for post in site.posts %}
   <url>
-    <loc>{{ site.url }}{{ post.url }}</loc>
-    {% if post.lastmod == null %}
-    <lastmod>{{ post.date | date_to_xmlschema }}</lastmod>
-    {% else %}
-    <lastmod>{{ post.lastmod | date_to_xmlschema }}</lastmod>
-    {% endif %}
-
-    {% if post.sitemap.changefreq == null %}
+    <loc>https://shinyeonghyeon.github.io//typescript/2020/12/08/indexable.html</loc>
+    <lastmod>2020-12-08T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
-    {% else %}
-    <changefreq>{{ post.sitemap.changefreq }}</changefreq>
-    {% endif %}
-
-    {% if post.sitemap.priority == null %}
-    <priority>0.5</priority>
-    {% else %}
-    <priority>{{ post.sitemap.priority }}</priority>
-    {% endif %}
-
+    <priority>1</priority>
   </url>
-  {% endfor %}
+  <url>
+    <loc>https://shinyeonghyeon.github.io//javascript/2020/11/27/optional-chaining.html</loc>
+    <lastmod>2020-11-27T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1</priority>
+  </url>
+  <url>
+    <loc>https://shinyeonghyeon.github.io//reactjs/2020/11/19/sixth-post.html</loc>
+    <lastmod>2020-11-19T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1</priority>
+  </url>
+  <url>
+    <loc>https://shinyeonghyeon.github.io//reactjs/2020/11/18/fifth-post.html</loc>
+    <lastmod>2020-11-18T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1</priority>
+  </url>
+  <url>
+    <loc>https://shinyeonghyeon.github.io//database/2020/11/13/fourth-post.html</loc>
+    <lastmod>2020-11-13T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1</priority>
+  </url>
+  <url>
+    <loc>https://shinyeonghyeon.github.io//nestjs/2020/11/10/third-post.html</loc>
+    <lastmod>2020-11-10T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1</priority>
+  </url>
+  <url>
+    <loc>https://shinyeonghyeon.github.io//javascript/2020/11/09/second-post.html</loc>
+    <lastmod>2020-11-09T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1</priority>
+  </url>
+  <url>
+    <loc>https://shinyeonghyeon.github.io//blog/2020/11/08/first-post.html</loc>
+    <lastmod>2020-11-08T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1</priority>
+  </url>
 </urlset>
