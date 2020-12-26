@@ -5,9 +5,43 @@
         <description>By. Shin YeongHyeon</description>
         <link>http://localhost:8000//</link>
         <atom:link href="http://localhost:8000//feed.xml" rel="self" type="application/rss+xml"/>
-        <pubDate>Wed, 09 Dec 2020 03:31:09 +0900</pubDate>
-        <lastBuildDate>Wed, 09 Dec 2020 03:31:09 +0900</lastBuildDate>
+        <pubDate>Sun, 27 Dec 2020 01:47:48 +0900</pubDate>
+        <lastBuildDate>Sun, 27 Dec 2020 01:47:48 +0900</lastBuildDate>
         <generator>Jekyll v4.0.0</generator>
+        
+        <item>
+            <title>[Go 도전기] 1. Why Go ?</title>
+            <description>&lt;p&gt;갑자기 Go 언어를 배워보고자 하는 욕구가 뿜뿜하였다.
+Go 에 대해서 여러 아티클이나 영상을 접하다 보니 가장 큰 장점을 &lt;em&gt;속도가 겁나 빠르다&lt;/em&gt; 인데, 이 매력에 이끌리게 되어서,
+좀 더 찾아보고 내가 배워야 할 이유가 충분하더라.&lt;/p&gt;
+
+&lt;h3 id=&quot;1-빠르다&quot;&gt;1. 빠르다.&lt;/h3&gt;
+&lt;p&gt;Go Lang 의 장점을 찾아보면 가장 먼저 Python 과 비교를 하는 아티클을 많이 보게 되는데 속도가
+ 너무 차이가 난다는 것이다.  믿을 수 없을 정도로 빠르다고, 유튜브를 조금만 봐도 나오는 수준…
+ 그리고 컴파일 언어라고 한다.&lt;/p&gt;
+
+&lt;h3 id=&quot;2-정적-언어&quot;&gt;2. 정적 언어.&lt;/h3&gt;
+&lt;p&gt;Type 강제하는가 너무 좋아&lt;/p&gt;
+
+&lt;h3 id=&quot;3-python-과-c-를-쏙쏙&quot;&gt;3. Python 과 C 를 쏙쏙&lt;/h3&gt;
+&lt;p&gt;Python 과 C 의 좋은 점들을 뽑아 디자인 되었다고 하더라, 그래서 포인터도 있고, C 처럼 자료구조를 만들기도 쉽다더라!&lt;/p&gt;
+
+&lt;h3 id=&quot;4-동시성-지&quot;&gt;4. 동시성 지&lt;/h3&gt;
+
+&lt;h3 id=&quot;5-갓-글&quot;&gt;5. 갓-글&lt;/h3&gt;
+
+&lt;p&gt;물론 단점들도 있고, 익히 듣기도 했지만, 단점이 없는 게 어디 있으랴, 일단 많이 배워보자!&lt;/p&gt;
+
+&lt;p&gt;나무위키 : &lt;a href=&quot;https://namu.wiki/w/Go(프로그래밍%20언어)&quot;&gt;https://namu.wiki/w/Go(프로그래밍%20언어)&lt;/a&gt;&lt;/p&gt;
+</description>
+            <pubDate>Sun, 27 Dec 2020 00:00:00 +0900</pubDate>
+            <link>http://localhost:8000//go/2020/12/27/go1.html</link>
+            <guid isPermaLink="true">http://localhost:8000//go/2020/12/27/go1.html</guid>
+            
+            
+            <category>go</category>
+            
+        </item>
         
         <item>
             <title>(TypeScript) Indexable</title>
