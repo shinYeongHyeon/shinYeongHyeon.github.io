@@ -5,9 +5,60 @@
         <description>By. Shin YeongHyeon</description>
         <link>http://localhost:8000//</link>
         <atom:link href="http://localhost:8000//feed.xml" rel="self" type="application/rss+xml"/>
-        <pubDate>Sun, 27 Dec 2020 01:47:48 +0900</pubDate>
-        <lastBuildDate>Sun, 27 Dec 2020 01:47:48 +0900</lastBuildDate>
+        <pubDate>Sun, 27 Dec 2020 18:17:38 +0900</pubDate>
+        <lastBuildDate>Sun, 27 Dec 2020 18:17:38 +0900</lastBuildDate>
         <generator>Jekyll v4.0.0</generator>
+        
+        <item>
+            <title>[Go 도전기] 2. Setting ~ Variables &amp; Constant ?</title>
+            <description>&lt;h3 id=&quot;세팅--기본개념&quot;&gt;세팅 &amp;amp; 기본개념&lt;/h3&gt;
+&lt;p&gt;Go 언어 개발시 특징이 다른 언어와 다르게 디렉토리를 맘대로 가져갈 수 없다는 것이다.&lt;br /&gt;
+(Mac 기준) &lt;code class=&quot;highlighter-rouge&quot;&gt;~/go&lt;/code&gt; 폴더 안에서 진행해야 한다. (&lt;strong&gt;&lt;em&gt;GO_PATH&lt;/em&gt;&lt;/strong&gt; 라고 한다).&lt;br /&gt;
+&lt;a href=&quot;https://golang.org&quot;&gt;Go 를 설치&lt;/a&gt; 하면 자동으로 생성이 된다는데 나는 안돼서 직접 만들었다.&lt;/p&gt;
+
+&lt;p&gt;구조는 main.go 가 Entry point 이기에 필수이며 (컴파일 할 경우에 !) 메인 함수가 필수 이다.&lt;br /&gt;
+또한, package 도 파일별로 필수이다. main 을 살펴보면 기본구조가 아래와 같다.&lt;/p&gt;
+
+&lt;div class=&quot;language-go highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;package&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;main&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;기본 제공되는 라이브러리 중 “fmt” 를 가장 먼저 접하게 되는데 (Hello World 찍어봐야지)&lt;br /&gt;
+사용 방법을 보자면 아래와 같다.&lt;/p&gt;
+
+&lt;div class=&quot;language-go highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;package&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;main&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;fmt&quot;&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;fmt&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Println&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Hello World&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;함수명을 보면 대문자로 시작하는데, 함수를 export 하려면 무조건 대문자로 시작해서 export 하고&lt;br /&gt;
+사용도 대문자로 시작하여야 한다.&lt;/p&gt;
+
+&lt;h3 id=&quot;변수--상수&quot;&gt;변수 &amp;amp; 상수&lt;/h3&gt;
+&lt;p&gt;다른 언어와 똑같이 변수와 상수가 존재하는데 전 포스팅에서 장점으로 말했 듯 Type 이 필요하다.&lt;br /&gt;
+예제를 보면 이해가 될 것이기에 별다른 설명은 생략한다.
+또한, 변수 생성에 축약 버전도 존재하는데 &lt;code class=&quot;highlighter-rouge&quot;&gt;:=&lt;/code&gt; 를 사용하면 된다, 이 때에는 Type 을 명시 해주지 않는데,&lt;br /&gt;
+이는 Go 가 알아서 찾아주며 이후에 다른 Type이 들어오면 에러를 뱉어내준다. (Oh..?)&lt;/p&gt;
+
+&lt;div class=&quot;language-go highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;name&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;string&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;den&quot;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;gender&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;string&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;M&quot;&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;age&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;:=&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;30&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;age&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;31&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;// to be ERROR !&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+</description>
+            <pubDate>Sun, 27 Dec 2020 00:00:00 +0900</pubDate>
+            <link>http://localhost:8000//go/2020/12/27/go2.html</link>
+            <guid isPermaLink="true">http://localhost:8000//go/2020/12/27/go2.html</guid>
+            
+            
+            <category>go</category>
+            
+        </item>
         
         <item>
             <title>[Go 도전기] 1. Why Go ?</title>
