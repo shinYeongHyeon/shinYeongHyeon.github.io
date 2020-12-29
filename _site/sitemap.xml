@@ -1,51 +1,100 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://shinyeonghyeon.github.io//typescript/2020/12/08/indexable.html</loc>
-    <lastmod>2020-12-08T00:00:00+00:00</lastmod>
+    <loc>https://shinyeonghyeon.github.io/</loc>
+    <lastmod>2020-12-28T14:51:42+00:00</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1</priority>
+    <priority>1.00</priority>
   </url>
   <url>
-    <loc>https://shinyeonghyeon.github.io//javascript/2020/11/27/optional-chaining.html</loc>
-    <lastmod>2020-11-27T00:00:00+00:00</lastmod>
+    <loc>https://shinyeonghyeon.github.io/about/</loc>
+    <lastmod>2020-12-28T14:51:42+00:00</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1</priority>
+    <priority>0.80</priority>
   </url>
   <url>
-    <loc>https://shinyeonghyeon.github.io//reactjs/2020/11/19/sixth-post.html</loc>
-    <lastmod>2020-11-19T00:00:00+00:00</lastmod>
+    <loc>https://shinyeonghyeon.github.io/articles/</loc>
+    <lastmod>2020-12-28T14:51:42+00:00</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1</priority>
+    <priority>0.80</priority>
   </url>
   <url>
-    <loc>https://shinyeonghyeon.github.io//reactjs/2020/11/18/fifth-post.html</loc>
-    <lastmod>2020-11-18T00:00:00+00:00</lastmod>
+    <loc>https://shinyeonghyeon.github.io/bio</loc>
+    <lastmod>2020-12-28T14:51:42+00:00</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1</priority>
+    <priority>0.80</priority>
   </url>
   <url>
-    <loc>https://shinyeonghyeon.github.io//database/2020/11/13/fourth-post.html</loc>
-    <lastmod>2020-11-13T00:00:00+00:00</lastmod>
+    <loc>https://shinyeonghyeon.github.io/category/</loc>
+    <lastmod>2020-12-28T14:51:42+00:00</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1</priority>
+    <priority>0.80</priority>
   </url>
   <url>
-    <loc>https://shinyeonghyeon.github.io//nestjs/2020/11/10/third-post.html</loc>
-    <lastmod>2020-11-10T00:00:00+00:00</lastmod>
+    <loc>https://shinyeonghyeon.github.io/go/2020/12/28/go-functions.html</loc>
+    <lastmod>2020-12-28T14:51:42+00:00</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1</priority>
+    <priority>0.64</priority>
   </url>
   <url>
-    <loc>https://shinyeonghyeon.github.io//javascript/2020/11/09/second-post.html</loc>
-    <lastmod>2020-11-09T00:00:00+00:00</lastmod>
+    <loc>https://shinyeonghyeon.github.io/go/2020/12/27/go2.html</loc>
+    <lastmod>2020-12-28T14:51:42+00:00</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1</priority>
+    <priority>0.64</priority>
   </url>
   <url>
-    <loc>https://shinyeonghyeon.github.io//blog/2020/11/08/first-post.html</loc>
-    <lastmod>2020-11-08T00:00:00+00:00</lastmod>
+    <loc>https://shinyeonghyeon.github.io/go/2020/12/27/go1.html</loc>
+    <lastmod>2020-12-28T14:51:42+00:00</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1</priority>
+    <priority>0.64</priority>
   </url>
+  <url>
+    <loc>https://shinyeonghyeon.github.io/typescript/2020/12/08/indexable.html</loc>
+    <lastmod>2020-12-28T14:51:42+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.64</priority>
+  </url>
+  <url>
+    <loc>https://shinyeonghyeon.github.io/javascript/2020/11/27/optional-chaining.html</loc>
+    <lastmod>2020-12-28T14:51:42+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.64</priority>
+  </url>
+  <url>
+    <loc>https://shinyeonghyeon.github.io/reactjs/2020/11/19/sixth-post.html</loc>
+    <lastmod>2020-12-28T14:51:42+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.64</priority>
+  </url>
+  <url>
+    <loc>https://shinyeonghyeon.github.io/reactjs/2020/11/18/fifth-post.html</loc>
+    <lastmod>2020-12-28T14:51:42+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.64</priority>
+  </url>
+  <url>
+    <loc>https://shinyeonghyeon.github.io/database/2020/11/13/fourth-post.html</loc>
+    <lastmod>2020-12-28T14:51:42+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.64</priority>
+  </url>
+  <url>
+    <loc>https://shinyeonghyeon.github.io/nestjs/2020/11/10/third-post.html</loc>
+    <lastmod>2020-12-28T14:51:42+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.64</priority>
+  </url>
+  <url>
+    <loc>https://shinyeonghyeon.github.io/javascript/2020/11/09/second-post.html</loc>
+    <lastmod>2020-12-28T14:51:42+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.64</priority>
+  </url>
+  <url>
+    <loc>https://shinyeonghyeon.github.io/blog/2020/11/08/first-post.html</loc>
+    <lastmod>2020-12-28T14:51:42+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.64</priority>
+  </url>
+
 </urlset>

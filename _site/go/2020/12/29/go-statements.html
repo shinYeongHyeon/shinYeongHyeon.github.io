@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1"><link type="application/atom+xml" rel="alternate" href="http://localhost:8000/feed.xml" title="Den" /></head>
+<style>@import url(/public/css/syntax/monokai.css);</style>
+  <title>Den's Blog</title>
+  <!-- <link href="/public/css/bootstrap.min.css" rel="stylesheet"> -->
+
+  <link href="/public/css/style.css" rel="stylesheet">
+  <body>
+  	<div class="container"> 
+		<div class="sidebar">
+			<div class="sidebar-item sidebar-header">
+	<div class='sidebar-brand'>
+		<a href="/" style="text-decoration: none">Den </a>
+	</div>
+	<a href="https://github.com/shinYeongHyeon" title="">
+		<img src="/assets/github.png" width="20" alt="github">
+	</a>
+</div>
+
+<div class="sidebar-item sidebar-nav">
+	<ul class="nav">
+      <li class="nav-title">Pages</li>
+		<li>
+			<a class="nav-item" href="/about">About</a>
+		</li>
+	  <li>
+	  	<a class="nav-item" href="/articles">Articles</a>
+	  </li>
+	  <li>
+	  	<a class="nav-item" href="/bio">Bio</a>
+	  </li>
+	</ul>
+</div>
+
+<div class="sidebar-item sidebar-nav">
+  	<ul class="nav">
+			<li class="nav-title">Categories</li>
+	    
+	    <li>
+	    	<a class="nav-item" href="/category/#blog">
+				<span class="name">blog</span>
+				<span class="badge">1</span>
+	    	</a>
+ 		</li>
+	    
+	    <li>
+	    	<a class="nav-item" href="/category/#javascript">
+				<span class="name">javascript</span>
+				<span class="badge">2</span>
+	    	</a>
+ 		</li>
+	    
+	    <li>
+	    	<a class="nav-item" href="/category/#nestJS">
+				<span class="name">nestJS</span>
+				<span class="badge">1</span>
+	    	</a>
+ 		</li>
+	    
+	    <li>
+	    	<a class="nav-item" href="/category/#database">
+				<span class="name">database</span>
+				<span class="badge">1</span>
+	    	</a>
+ 		</li>
+	    
+	    <li>
+	    	<a class="nav-item" href="/category/#reactJS">
+				<span class="name">reactJS</span>
+				<span class="badge">2</span>
+	    	</a>
+ 		</li>
+	    
+	    <li>
+	    	<a class="nav-item" href="/category/#typescript">
+				<span class="name">typescript</span>
+				<span class="badge">1</span>
+	    	</a>
+ 		</li>
+	    
+	    <li>
+	    	<a class="nav-item" href="/category/#go">
+				<span class="name">go</span>
+				<span class="badge">4</span>
+	    	</a>
+ 		</li>
+	    
+	  </nav>
+	</ul>
+</div>
+
+		</div>
+		<div class="content">
+			<article class="post">
+	<header class="post-header">
+		<div class="post-title"> 
+			[Go 도전기] 4. For, If, Switch Statement
+		</div>
+		<time class="post-date dt-published" datetime="2020-12-29T00:00:00+09:00" itemprop="datePublished">2020/12/29
+		</time>		
+	</header>
+
+	<div class="post-content">
+		<h2 id="for">For</h2>
+<p>Go 에서는 다른 언어에서의 forEach, for in 같은 것은 존재 하지 않고 오직 for 만이 있다.
+그리고 range 와 보통 사용하는데, go 만의 특색있는 for 문을 살펴보도록 하자</p>
+<div class="language-go highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">func</span> <span class="n">add</span><span class="p">(</span><span class="n">numbers</span> <span class="o">...</span><span class="kt">int</span><span class="p">)</span> <span class="kt">int</span> <span class="p">{</span>
+
+  <span class="c">// with range</span>
+  <span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">number</span> <span class="o">:=</span> <span class="k">range</span> <span class="n">numbers</span> <span class="p">{</span>
+    <span class="c">// execute</span>
+  <span class="p">}</span>
+
+  <span class="c">// ignore index</span>
+  <span class="k">for</span> <span class="n">_</span><span class="p">,</span> <span class="n">number</span> <span class="o">:=</span> <span class="k">range</span> <span class="n">numbers</span> <span class="p">{</span>
+    <span class="c">// execute</span>
+  <span class="p">}</span>
+
+  <span class="c">// normal for</span>
+  <span class="k">for</span> <span class="n">i</span> <span class="o">:=</span> <span class="m">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">numbers</span><span class="p">);</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c">// execute</span>
+  <span class="p">}</span>
+
+  <span class="o">...</span><span class="n">생략</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="if--switch">If / Switch</h2>
+<p>너무 익숙한 If / Switch 문, 그런데 Go 에서는 If / Switch 문 안에서만 사용할 수 있는 변수를 만들어 낼 수 있다.</p>
+<div class="language-go highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">func</span> <span class="n">canIDrink</span><span class="p">(</span><span class="n">age</span> <span class="kt">int</span><span class="p">)</span> <span class="kt">bool</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="n">age</span> <span class="o">&lt;</span> <span class="m">18</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="no">false</span>
+  <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="no">true</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">func</span> <span class="n">canIDrinkInKorea</span><span class="p">(</span><span class="n">age</span> <span class="kt">int</span><span class="p">)</span> <span class="kt">bool</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="n">koreanAge</span> <span class="o">:=</span> <span class="n">age</span> <span class="o">+</span> <span class="m">2</span><span class="p">;</span> <span class="n">koreanAge</span> <span class="o">&lt;</span> <span class="m">18</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="no">false</span>
+  <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="no">true</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">func</span> <span class="n">canIDrinkSwitchVer</span><span class="p">(</span><span class="n">age</span> <span class="kt">int</span><span class="p">)</span> <span class="kt">bool</span> <span class="p">{</span>
+  <span class="k">switch</span> <span class="n">age</span> <span class="p">{</span>
+    <span class="k">case</span> <span class="m">16</span><span class="o">:</span>
+      <span class="k">return</span> <span class="no">false</span>
+    <span class="k">case</span> <span class="m">18</span><span class="o">:</span>
+      <span class="k">return</span> <span class="no">true</span>
+  <span class="p">}</span>
+
+  <span class="k">return</span> <span class="no">false</span>
+<span class="p">}</span>
+
+<span class="k">func</span> <span class="n">canIDrinkSwitchVer2</span><span class="p">(</span><span class="n">age</span> <span class="kt">int</span><span class="p">)</span> <span class="kt">bool</span> <span class="p">{</span>
+  <span class="k">switch</span> <span class="p">{</span>
+    <span class="k">case</span> <span class="n">age</span> <span class="o">&lt;</span> <span class="m">18</span><span class="o">:</span>
+      <span class="k">return</span> <span class="no">false</span>
+    <span class="k">case</span> <span class="n">age</span> <span class="o">==</span> <span class="m">18</span><span class="o">:</span>
+      <span class="k">return</span> <span class="no">true</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">func</span> <span class="n">canIDrinkInKoreaSwitchVer</span><span class="p">(</span><span class="n">age</span> <span class="kt">int</span><span class="p">)</span> <span class="kt">bool</span> <span class="p">{</span>
+  <span class="k">switch</span> <span class="n">koreanAge</span> <span class="o">:=</span> <span class="n">age</span> <span class="o">+</span> <span class="m">2</span><span class="p">;</span> <span class="n">koreanAge</span> <span class="p">{</span>
+    <span class="k">case</span> <span class="m">16</span><span class="o">:</span>
+      <span class="k">return</span> <span class="no">false</span>
+    <span class="k">case</span> <span class="m">18</span><span class="o">:</span>
+      <span class="k">return</span> <span class="no">true</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+
+		<br>
+		<br>
+		
+		<div id="post-disqus" class="container">
+			<div id="disqus_thread" style="width: 100%; height: 100px"></div>
+<script>
+  /**
+   *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+   *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
+  /*
+  var disqus_config = function () {
+  this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+  this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+  };
+  */
+  (function() { // DON'T EDIT BELOW THIS LINE
+    var d = document, s = d.createElement('script');
+    s.src = 'https://shinyeonghyeon-github-io.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+  })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<script>
+    if (this.window.innerWidth > 600) {
+      setTimeout(() => {
+        this.document.getElementsByClassName('sidebar')[0].style.height = this.document.getElementsByClassName('container')[0].scrollHeight + 'px';
+      }, 1000);
+      setTimeout(() => {
+        this.document.getElementsByClassName('sidebar')[0].style.height = this.document.getElementsByClassName('container')[0].scrollHeight + 'px';
+      }, 2000);
+      setTimeout(() => {
+        this.document.getElementsByClassName('sidebar')[0].style.height = this.document.getElementsByClassName('container')[0].scrollHeight + 'px';
+      }, 5000);
+    }
+</script>
+
+		</div>
+		
+	</div>
+</article>
+
+
+
+		</div>
+	</div>
+  </body>
+</html>

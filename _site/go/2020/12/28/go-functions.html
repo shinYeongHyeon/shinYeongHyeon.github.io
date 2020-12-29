@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1"><link type="application/atom+xml" rel="alternate" href="http://localhost:8000/feed.xml" title="Den" /></head>
+<style>@import url(/public/css/syntax/monokai.css);</style>
+  <title>Den's Blog</title>
+  <!-- <link href="/public/css/bootstrap.min.css" rel="stylesheet"> -->
+
+  <link href="/public/css/style.css" rel="stylesheet">
+  <body>
+  	<div class="container"> 
+		<div class="sidebar">
+			<div class="sidebar-item sidebar-header">
+	<div class='sidebar-brand'>
+		<a href="/" style="text-decoration: none">Den </a>
+	</div>
+	<a href="https://github.com/shinYeongHyeon" title="">
+		<img src="/assets/github.png" width="20" alt="github">
+	</a>
+</div>
+
+<div class="sidebar-item sidebar-nav">
+	<ul class="nav">
+      <li class="nav-title">Pages</li>
+		<li>
+			<a class="nav-item" href="/about">About</a>
+		</li>
+	  <li>
+	  	<a class="nav-item" href="/articles">Articles</a>
+	  </li>
+	  <li>
+	  	<a class="nav-item" href="/bio">Bio</a>
+	  </li>
+	</ul>
+</div>
+
+<div class="sidebar-item sidebar-nav">
+  	<ul class="nav">
+			<li class="nav-title">Categories</li>
+	    
+	    <li>
+	    	<a class="nav-item" href="/category/#blog">
+				<span class="name">blog</span>
+				<span class="badge">1</span>
+	    	</a>
+ 		</li>
+	    
+	    <li>
+	    	<a class="nav-item" href="/category/#javascript">
+				<span class="name">javascript</span>
+				<span class="badge">2</span>
+	    	</a>
+ 		</li>
+	    
+	    <li>
+	    	<a class="nav-item" href="/category/#nestJS">
+				<span class="name">nestJS</span>
+				<span class="badge">1</span>
+	    	</a>
+ 		</li>
+	    
+	    <li>
+	    	<a class="nav-item" href="/category/#database">
+				<span class="name">database</span>
+				<span class="badge">1</span>
+	    	</a>
+ 		</li>
+	    
+	    <li>
+	    	<a class="nav-item" href="/category/#reactJS">
+				<span class="name">reactJS</span>
+				<span class="badge">2</span>
+	    	</a>
+ 		</li>
+	    
+	    <li>
+	    	<a class="nav-item" href="/category/#typescript">
+				<span class="name">typescript</span>
+				<span class="badge">1</span>
+	    	</a>
+ 		</li>
+	    
+	    <li>
+	    	<a class="nav-item" href="/category/#go">
+				<span class="name">go</span>
+				<span class="badge">4</span>
+	    	</a>
+ 		</li>
+	    
+	  </nav>
+	</ul>
+</div>
+
+		</div>
+		<div class="content">
+			<article class="post">
+	<header class="post-header">
+		<div class="post-title"> 
+			[Go 도전기] 3. Functions
+		</div>
+		<time class="post-date dt-published" datetime="2020-12-28T00:00:00+09:00" itemprop="datePublished">2020/12/28
+		</time>		
+	</header>
+
+	<div class="post-content">
+		<h2 id="function">Function</h2>
+<p>Go 에서는 꽤 유용한 기능들이 많고 Go 만의 특이점도 많다.<br />
+아래에서 천천히 살펴보자.</p>
+
+<h3 id="1-모든-타입-설정">1. 모든 타입 설정</h3>
+<p>정적 언어이다 보니 당연하게도 파라미터 타입과 리턴 타입을 설정해 주어야 한다.
+그런데 만약, <code class="highlighter-rouge">multiply</code> 와 같은 곱셈 함수처럼 모든 파라미터가 같을 때 어느 정도 생략이 가능하다.</p>
+<div class="language-go highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">func</span> <span class="n">multiply</span><span class="p">(</span><span class="n">a</span> <span class="kt">int</span><span class="p">,</span> <span class="n">b</span> <span class="kt">int</span><span class="p">)</span> <span class="kt">int</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="n">a</span> <span class="o">*</span> <span class="n">b</span>
+<span class="p">}</span>
+
+<span class="n">function</span> <span class="n">multiply2</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="kt">int</span><span class="p">)</span> <span class="kt">int</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="n">a</span> <span class="o">*</span> <span class="n">b</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="2-여러-값-반환">2. 여러 값 반환</h3>
+<p>다른 언어에서 여러 값들을 반환 하려면 보통 Array / Object 를 이용해서 반환하며,<br />
+리턴 타입이 Array / Object 가 된다.<br />
+그러나 Go 에서는 여러 값 반환이 가능하다! (OMG ?)</p>
+<div class="language-go highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">func</span> <span class="n">lenAndUpper</span><span class="p">(</span><span class="n">name</span> <span class="kt">string</span><span class="p">)</span> <span class="p">(</span><span class="kt">int</span><span class="p">,</span> <span class="kt">string</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="n">name</span><span class="p">),</span> <span class="n">strings</span><span class="o">.</span><span class="n">ToUpper</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="k">func</span> <span class="n">main</span><span class="p">()</span> <span class="p">{</span>
+  <span class="n">stringLength</span><span class="p">,</span> <span class="n">upperName</span> <span class="o">:=</span> <span class="n">lenAndUpper</span><span class="p">(</span><span class="s">"den"</span><span class="p">)</span>
+  
+  <span class="n">fmt</span><span class="o">.</span><span class="n">Println</span><span class="p">(</span><span class="n">stringLength</span><span class="p">)</span> <span class="c">// 3</span>
+  <span class="n">fmt</span><span class="o">.</span><span class="n">Println</span><span class="p">(</span><span class="n">upperName</span><span class="p">)</span>  <span class="c">// DEN</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="3-args-받기">3. Args 받기</h3>
+<p>갯수를 알 수 없는 파라미터들을 받을 때는 타입에 <code class="highlighter-rouge">...</code>을 사용한다.<br />
+계속해서 코드로 알아보자</p>
+<div class="language-go highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">func</span> <span class="n">repeatPrint</span><span class="p">(</span><span class="n">words</span> <span class="o">...</span><span class="kt">string</span><span class="p">)</span> <span class="p">{</span>
+  <span class="n">fmt</span><span class="o">.</span><span class="n">Println</span><span class="p">(</span><span class="n">words</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="k">func</span> <span class="n">main</span><span class="p">()</span> <span class="p">{</span>
+  <span class="n">repeatPrint</span><span class="p">(</span><span class="s">"den"</span><span class="p">,</span> <span class="s">"shin"</span><span class="p">,</span> <span class="s">"garlic"</span><span class="p">)</span> <span class="c">// [den shin yeong]</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="4-리턴-타입에-변수-지정-후-아무-것도-리턴하지-않기">4. 리턴 타입에 변수 지정 후 아무 것도 리턴하지 않기</h3>
+<p>제목을 어떻게 지어야 할지 애매한데, 아무것도 리턴하지 않았는데 리턴이 되는 magic 이 있다.<br />
+타입에 변수명을 미리 지정하기만 하면 되는데, 코드로 알아보자</p>
+<div class="language-go highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">func</span> <span class="n">lenAndUpper</span><span class="p">(</span><span class="n">name</span> <span class="kt">string</span><span class="p">)</span> <span class="p">(</span><span class="n">length</span> <span class="kt">int</span><span class="p">,</span> <span class="n">uppercase</span> <span class="kt">string</span><span class="p">)</span> <span class="p">{</span>
+  <span class="n">length</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+  <span class="n">uppercase</span> <span class="o">=</span> <span class="n">strings</span><span class="o">.</span><span class="n">ToUpper</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+  
+  <span class="k">return</span>
+<span class="p">}</span>
+
+<span class="k">func</span> <span class="n">main</span><span class="p">()</span> <span class="p">{</span>
+  <span class="n">stringLength</span><span class="p">,</span> <span class="n">upeprName</span> <span class="o">:=</span> <span class="n">lenAndUpper</span><span class="p">(</span><span class="s">"den"</span><span class="p">)</span>
+  
+  <span class="n">fmt</span><span class="o">.</span><span class="n">Println</span><span class="p">(</span><span class="n">stringLength</span><span class="p">)</span> <span class="c">// 3</span>
+  <span class="n">fmt</span><span class="o">.</span><span class="n">Println</span><span class="p">(</span><span class="n">upperName</span><span class="p">)</span>  <span class="c">// DEN</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<p>신기해… <del>근데 사용은 안 할 듯</del></p>
+
+<h3 id="5-끝날때-까지-끝난게-아니다">5. 끝날때 까지 끝난게 아니다</h3>
+<p>함수가 끝난 뒤에 실행이 되어야 하는 것들이 있다면 보통은 리턴 받고 나서 로직을 넣는데,
+이거를 함수 내에서 설정할 수 있다, 즉 함수 자체에서 “내가 끝난 뒤에는 이것을 실행할거야!” 같은 건데,,,<br />
+너무 멋있다… 코드로 보자</p>
+<div class="language-go highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">func</span> <span class="n">lenAndUpper</span><span class="p">(</span><span class="n">name</span> <span class="kt">string</span><span class="p">)</span> <span class="p">(</span><span class="n">length</span> <span class="kt">int</span><span class="p">,</span> <span class="n">uppercase</span> <span class="kt">string</span><span class="p">)</span> <span class="p">{</span>
+	<span class="k">defer</span> <span class="n">fmt</span><span class="o">.</span><span class="n">Println</span><span class="p">(</span><span class="s">"I'm Done"</span><span class="p">)</span>
+
+	<span class="n">length</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+	<span class="n">uppercase</span> <span class="o">=</span> <span class="n">strings</span><span class="o">.</span><span class="n">ToUpper</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+
+	<span class="k">return</span>
+<span class="p">}</span>
+
+<span class="k">func</span> <span class="n">main</span><span class="p">()</span> <span class="p">{</span>
+	<span class="n">totalLength</span><span class="p">,</span> <span class="n">upperName</span> <span class="o">:=</span> <span class="n">lenAndUpper</span><span class="p">(</span><span class="s">"den"</span><span class="p">)</span>
+
+	<span class="n">fmt</span><span class="o">.</span><span class="n">Println</span><span class="p">(</span><span class="n">totalLength</span><span class="p">)</span>
+	<span class="n">fmt</span><span class="o">.</span><span class="n">Println</span><span class="p">(</span><span class="n">upperName</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="c">// I'm Done</span>
+<span class="c">// 3</span>
+<span class="c">// DEN</span>
+</code></pre></div></div>
+<p>이거 너무 멋있지 않나 ? 이거 때문이라도 go 에 빠질듯…</p>
+
+
+		<br>
+		<br>
+		
+		<div id="post-disqus" class="container">
+			<div id="disqus_thread" style="width: 100%; height: 100px"></div>
+<script>
+  /**
+   *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+   *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
+  /*
+  var disqus_config = function () {
+  this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+  this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+  };
+  */
+  (function() { // DON'T EDIT BELOW THIS LINE
+    var d = document, s = d.createElement('script');
+    s.src = 'https://shinyeonghyeon-github-io.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+  })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<script>
+    if (this.window.innerWidth > 600) {
+      setTimeout(() => {
+        this.document.getElementsByClassName('sidebar')[0].style.height = this.document.getElementsByClassName('container')[0].scrollHeight + 'px';
+      }, 1000);
+      setTimeout(() => {
+        this.document.getElementsByClassName('sidebar')[0].style.height = this.document.getElementsByClassName('container')[0].scrollHeight + 'px';
+      }, 2000);
+      setTimeout(() => {
+        this.document.getElementsByClassName('sidebar')[0].style.height = this.document.getElementsByClassName('container')[0].scrollHeight + 'px';
+      }, 5000);
+    }
+</script>
+
+		</div>
+		
+	</div>
+</article>
+
+
+
+		</div>
+	</div>
+  </body>
+</html>
