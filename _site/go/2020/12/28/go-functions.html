@@ -84,7 +84,7 @@
 	    <li>
 	    	<a class="nav-item" href="/category/#go">
 				<span class="name">go</span>
-				<span class="badge">4</span>
+				<span class="badge">5</span>
 	    	</a>
  		</li>
 	    
@@ -150,6 +150,7 @@
 
 <h3 id="4-리턴-타입에-변수-지정-후-아무-것도-리턴하지-않기">4. 리턴 타입에 변수 지정 후 아무 것도 리턴하지 않기</h3>
 <p>제목을 어떻게 지어야 할지 애매한데, 아무것도 리턴하지 않았는데 리턴이 되는 magic 이 있다.<br />
+이를 naked function 이라 한다.<br />
 타입에 변수명을 미리 지정하기만 하면 되는데, 코드로 알아보자</p>
 <div class="language-go highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">func</span> <span class="n">lenAndUpper</span><span class="p">(</span><span class="n">name</span> <span class="kt">string</span><span class="p">)</span> <span class="p">(</span><span class="n">length</span> <span class="kt">int</span><span class="p">,</span> <span class="n">uppercase</span> <span class="kt">string</span><span class="p">)</span> <span class="p">{</span>
   <span class="n">length</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>

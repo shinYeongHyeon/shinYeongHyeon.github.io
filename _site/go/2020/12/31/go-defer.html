@@ -97,38 +97,55 @@
 			<article class="post">
 	<header class="post-header">
 		<div class="post-title"> 
-			(JavaScript) parseInt 의 약어
+			[Go 도전기] 5. Defer
 		</div>
-		<time class="post-date dt-published" datetime="2020-11-09T00:00:00+09:00" itemprop="datePublished">2020/11/09
+		<time class="post-date dt-published" datetime="2020-12-31T00:00:00+09:00" itemprop="datePublished">2020/12/31
 		</time>		
 	</header>
 
 	<div class="post-content">
-		<p>parseInt 의 약어가 존재한다는 것을 알아내게 되는 일이 있었다.<br />
-<code class="highlighter-rouge">parseInt(1)</code> 은 <code class="highlighter-rouge">+'1'</code> 과 동일하다는 것이다.<br />
-이 이유에 대해서는 자세히 알지는 못해서 이래저래 알아보고 동료직원과 고민도 해봤는데,<br />
-뚜렷한 근거에 대해서는 알지 못했다.</p>
+		<p><a href="https://shinyeonghyeon.github.io/go/2020/12/28/go-functions.html">전전 포스팅</a> 에서 <em>끝날때 까지 끝나는게 아닌</em> 함수 안의 defer 에 대해서 알아보았다.<br />
+defer 를 함수 최상단에 써 두었었는데, 쉬운 이해를 위해서 그랬고 중간에 넣어도<br />
+진행이 가능하다.<br />
+defer 는 해당 라인이 됐을 때 그때 스택에 쌓아 둔다.<br />
+이 말을 코드로 통해 이해해보자.</p>
+<div class="language-go highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">func</span> <span class="n">a</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">i</span> <span class="o">:=</span> <span class="m">0</span>
+    <span class="k">defer</span> <span class="n">fmt</span><span class="o">.</span><span class="n">Println</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+    <span class="n">i</span><span class="o">++</span>
+    <span class="k">return</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<p>위 함수의 결과물은 <code class="highlighter-rouge">0</code> 이다. 실행  자체는 <code class="highlighter-rouge">return</code> 후라서 <code class="highlighter-rouge">1</code>이 되어야 할 것 같지만, 스택에 쌓인 시점의 <code class="highlighter-rouge">i</code>의 값은 <code class="highlighter-rouge">0</code>이기 때문이다.</p>
 
-<p>이 글을 보고 <em>으잉?</em> 하는 사람들도 있을 것 같아서 아래 사진을 첨부해본다.<br />
-<del>나만 몰랐던 거 아니라고 해주세요</del></p>
+<p>또한, 스택이기 때문에 후입선출이 된다.</p>
 
-<p><img src="/assets/parseInt.png" alt="" /></p>
+<div class="language-go highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">func</span> <span class="n">main</span><span class="p">()</span> <span class="p">{</span>
+	<span class="n">fmt</span><span class="o">.</span><span class="n">Println</span><span class="p">(</span><span class="s">"counting"</span><span class="p">)</span>
 
-<p>그런데 <code class="highlighter-rouge">+1</code> 표현을 처음 봐서, 익숙치 않아서 그럴진 몰라도 가독성이 그리 좋아보이진 않아서<br />
-실무나 프로젝트에 쓸 것 같지는 않다…</p>
+	<span class="k">for</span> <span class="n">i</span> <span class="o">:=</span> <span class="m">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="m">10</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span> <span class="p">{</span>
+        <span class="k">defer</span> <span class="n">fmt</span><span class="o">.</span><span class="n">Println</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+	<span class="p">}</span>
 
-<p>혹시 이에 대해서 이유/원인을 알고 있는 천사같은 분이 있으시다면,<br />
-댓글로 친절히 알려주시면 <del>사랑해요</del></p>
+	<span class="n">fmt</span><span class="o">.</span><span class="n">Println</span><span class="p">(</span><span class="s">"done"</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div></div>
 
-<hr />
-<p>(추가)</p>
-
-<p>브라우저별로 속도가 다르다는 제보와 일부 연산 값이 다르다는 제보를 받았다.<br />
-어려운 웹개발의 세계..</p>
-
-<p><a href="http://phrogz.net/js/string_to_number.html">브라우저 속도</a></p>
-
-<p><a href="https://stackoverflow.com/questions/17106681/parseint-vs-unary-plus-when-to-use-which/17106702#17106702">결과 값</a></p>
+<p>위 코드의 결과물은</p>
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">counting
+done
+9
+8
+7
+6
+5
+4
+3
+2
+1
+0
+</span></code></pre></div></div>
+<p>이 된다.</p>
 
 		<br>
 		<br>
