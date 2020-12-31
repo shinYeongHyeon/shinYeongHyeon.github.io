@@ -23,7 +23,7 @@ func add(numbers ...int) int {
   }
 
   // normal for
-  for i := 0; i < len(numbers); i++) {
+  for i := 0; i < len(numbers); i++ {
     // execute
   }
 

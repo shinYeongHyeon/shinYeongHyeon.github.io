@@ -55,6 +55,7 @@ func main() {
 
 ### 4. 리턴 타입에 변수 지정 후 아무 것도 리턴하지 않기
 제목을 어떻게 지어야 할지 애매한데, 아무것도 리턴하지 않았는데 리턴이 되는 magic 이 있다.  
+이를 naked function 이라 한다.  
 타입에 변수명을 미리 지정하기만 하면 되는데, 코드로 알아보자
 ```go
 func lenAndUpper(name string) (length int, uppercase string) {
