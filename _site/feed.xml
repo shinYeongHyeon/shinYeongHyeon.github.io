@@ -5,9 +5,55 @@
         <description>By. Shin YeongHyeon</description>
         <link>http://localhost:8000//</link>
         <atom:link href="http://localhost:8000//feed.xml" rel="self" type="application/rss+xml"/>
-        <pubDate>Thu, 31 Dec 2020 20:06:26 +0900</pubDate>
-        <lastBuildDate>Thu, 31 Dec 2020 20:06:26 +0900</lastBuildDate>
+        <pubDate>Fri, 01 Jan 2021 23:31:52 +0900</pubDate>
+        <lastBuildDate>Fri, 01 Jan 2021 23:31:52 +0900</lastBuildDate>
         <generator>Jekyll v4.0.0</generator>
+        
+        <item>
+            <title>[Go 도전기] 6. Array &amp; Slice</title>
+            <description>&lt;h2 id=&quot;happy-new-year&quot;&gt;Happy New Year&lt;/h2&gt;
+
+&lt;p&gt;새해에도 Go 와 함께 시작 !&lt;/p&gt;
+
+&lt;h3 id=&quot;1-array&quot;&gt;1. Array&lt;/h3&gt;
+&lt;p&gt;Go 에서 Array 는 그 크기를 제한해주어야 한다. 또한, 그 타입도 지정해야 하며,&lt;br /&gt;
+ 그 안에 값들을 세팅하는 것도 나로서는 좀 색달랐다.&lt;br /&gt;
+ 코드로 살펴보자&lt;/p&gt;
+
+&lt;div class=&quot;language-go highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; &lt;span class=&quot;n&quot;&gt;names&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;:=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;string&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;shin&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;yeong&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;hyeon&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;// Define&lt;/span&gt;
+ 
+ &lt;span class=&quot;n&quot;&gt;names&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;den&quot;&lt;/span&gt;
+ &lt;span class=&quot;n&quot;&gt;names&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;den-shin&quot;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;첫 번째 라인과 같이 대괄호&lt;code class=&quot;highlighter-rouge&quot;&gt;[]&lt;/code&gt; 안에 Array 의 크기를 넣어주고 대괄호 뒤에 타입을 지정해준다.&lt;br /&gt;
+그리고 값들을 중괄호&lt;code class=&quot;highlighter-rouge&quot;&gt;{}&lt;/code&gt; 안에 넣어서 정의 해준다.&lt;br /&gt;
+그 후에 추가하는 것들은 그 아래 라인들과 같이 진행해주고, 만약&lt;br /&gt;
+&lt;code class=&quot;highlighter-rouge&quot;&gt;names[5] = &quot;anything&quot;&lt;/code&gt; 을 해준다면 컴파일 에러가 난다.&lt;/p&gt;
+
+&lt;p&gt;그런데, 크기 지정은 사실 실무에서 그렇게 사용하지 않는다,&lt;br /&gt;
+크기가 없는 Array 는 어떻게 지정할까 ?&lt;/p&gt;
+
+&lt;h3 id=&quot;2-slice&quot;&gt;2. Slice&lt;/h3&gt;
+&lt;p&gt;크기가 없는 Array 는 Slice 라 불리며 Array 와 정의한다.&lt;/p&gt;
+&lt;div class=&quot;language-go highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; &lt;span class=&quot;n&quot;&gt;names&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;:=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[]&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;string&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;shin&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;yeong&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;hyeon&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;// Define&lt;/span&gt;
+ 
+ &lt;span class=&quot;n&quot;&gt;names&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;append&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;names&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;den&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;선언부는 거의 똑같다, 크기 지정만 빼면.&lt;br /&gt;
+ 그런데 추가하는 부분이 다른데, &lt;code class=&quot;highlighter-rouge&quot;&gt;append&lt;/code&gt; 라는 함수를 이용해주어야 하며,  해당 함수는
+ 인자로 넘긴 첫번째 &lt;code class=&quot;highlighter-rouge&quot;&gt;Slice&lt;/code&gt; -예제에서의 &lt;code class=&quot;highlighter-rouge&quot;&gt;names&lt;/code&gt;- 를 변화시키는게 아니라, 값을 추가해서 &lt;code class=&quot;highlighter-rouge&quot;&gt;Return&lt;/code&gt; 해준다.&lt;br /&gt;
+ 이와 같은 형태는 개발을 하다보면 실질적으로 도움이 된다.&lt;br /&gt;
+ 원래 값을 변화시키지 않고, 리턴하는 것이 디버깅에도 조금 더 효율적이니까,&lt;/p&gt;
+</description>
+            <pubDate>Fri, 01 Jan 2021 00:00:00 +0900</pubDate>
+            <link>http://localhost:8000//go/2021/01/01/go-array-and-slice.html</link>
+            <guid isPermaLink="true">http://localhost:8000//go/2021/01/01/go-array-and-slice.html</guid>
+            
+            
+            <category>go</category>
+            
+        </item>
         
         <item>
             <title>[Go 도전기] 5. Defer</title>

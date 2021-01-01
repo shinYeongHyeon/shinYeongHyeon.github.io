@@ -97,55 +97,47 @@
 			<article class="post">
 	<header class="post-header">
 		<div class="post-title"> 
-			[Go 도전기] 5. Defer
+			[Go 도전기] 6. Array &amp; Slice
 		</div>
-		<time class="post-date dt-published" datetime="2020-12-31T00:00:00+09:00" itemprop="datePublished">2020/12/31
+		<time class="post-date dt-published" datetime="2021-01-01T00:00:00+09:00" itemprop="datePublished">2021/01/01
 		</time>		
 	</header>
 
 	<div class="post-content">
-		<p><a href="https://shinyeonghyeon.github.io/go/2020/12/28/go-functions.html">전전 포스팅</a> 에서 <em>끝날때 까지 끝나는게 아닌</em> 함수 안의 defer 에 대해서 알아보았다.<br />
-defer 를 함수 최상단에 써 두었었는데, 쉬운 이해를 위해서 그랬고 중간에 넣어도<br />
-진행이 가능하다.<br />
-defer 는 해당 라인이 됐을 때 그때 스택에 쌓아 둔다.<br />
-이 말을 코드로 통해 이해해보자.</p>
-<div class="language-go highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">func</span> <span class="n">a</span><span class="p">()</span> <span class="p">{</span>
-    <span class="n">i</span> <span class="o">:=</span> <span class="m">0</span>
-    <span class="k">defer</span> <span class="n">fmt</span><span class="o">.</span><span class="n">Println</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
-    <span class="n">i</span><span class="o">++</span>
-    <span class="k">return</span>
-<span class="p">}</span>
-</code></pre></div></div>
-<p>위 함수의 결과물은 <code class="highlighter-rouge">0</code> 이다. 실행  자체는 <code class="highlighter-rouge">return</code> 후라서 <code class="highlighter-rouge">1</code>이 되어야 할 것 같지만, 스택에 쌓인 시점의 <code class="highlighter-rouge">i</code>의 값은 <code class="highlighter-rouge">0</code>이기 때문이다.</p>
+		<h2 id="happy-new-year">Happy New Year</h2>
 
-<p>또한, 스택이기 때문에 후입선출이 된다.</p>
+<p>새해에도 Go 와 함께 시작 !</p>
 
-<div class="language-go highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">func</span> <span class="n">main</span><span class="p">()</span> <span class="p">{</span>
-	<span class="n">fmt</span><span class="o">.</span><span class="n">Println</span><span class="p">(</span><span class="s">"counting"</span><span class="p">)</span>
+<h3 id="1-array">1. Array</h3>
+<p>Go 에서 Array 는 그 크기를 제한해주어야 한다. 또한, 그 타입도 지정해야 하며,<br />
+ 그 안에 값들을 세팅하는 것도 나로서는 좀 색달랐다.<br />
+ 코드로 살펴보자</p>
 
-	<span class="k">for</span> <span class="n">i</span> <span class="o">:=</span> <span class="m">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="m">10</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span> <span class="p">{</span>
-        <span class="k">defer</span> <span class="n">fmt</span><span class="o">.</span><span class="n">Println</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
-	<span class="p">}</span>
-
-	<span class="n">fmt</span><span class="o">.</span><span class="n">Println</span><span class="p">(</span><span class="s">"done"</span><span class="p">)</span>
-<span class="p">}</span>
+<div class="language-go highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="n">names</span> <span class="o">:=</span> <span class="p">[</span><span class="m">5</span><span class="p">]</span><span class="kt">string</span><span class="p">{</span><span class="s">"shin"</span><span class="p">,</span> <span class="s">"yeong"</span><span class="p">,</span> <span class="s">"hyeon"</span><span class="p">}</span> <span class="c">// Define</span>
+ 
+ <span class="n">names</span><span class="p">[</span><span class="m">3</span><span class="p">]</span> <span class="o">=</span> <span class="s">"den"</span>
+ <span class="n">names</span><span class="p">[</span><span class="m">4</span><span class="p">]</span> <span class="o">=</span> <span class="s">"den-shin"</span>
 </code></pre></div></div>
 
-<p>위 코드의 결과물은</p>
-<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">counting
-done
-9
-8
-7
-6
-5
-4
-3
-2
-1
-0
-</span></code></pre></div></div>
-<p>이 된다.</p>
+<p>첫 번째 라인과 같이 대괄호<code class="highlighter-rouge">[]</code> 안에 Array 의 크기를 넣어주고 대괄호 뒤에 타입을 지정해준다.<br />
+그리고 값들을 중괄호<code class="highlighter-rouge">{}</code> 안에 넣어서 정의 해준다.<br />
+그 후에 추가하는 것들은 그 아래 라인들과 같이 진행해주고, 만약<br />
+<code class="highlighter-rouge">names[5] = "anything"</code> 을 해준다면 컴파일 에러가 난다.</p>
+
+<p>그런데, 크기 지정은 사실 실무에서 그렇게 사용하지 않는다,<br />
+크기가 없는 Array 는 어떻게 지정할까 ?</p>
+
+<h3 id="2-slice">2. Slice</h3>
+<p>크기가 없는 Array 는 Slice 라 불리며 Array 와 정의한다.</p>
+<div class="language-go highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="n">names</span> <span class="o">:=</span> <span class="p">[]</span><span class="kt">string</span><span class="p">{</span><span class="s">"shin"</span><span class="p">,</span> <span class="s">"yeong"</span><span class="p">,</span> <span class="s">"hyeon"</span><span class="p">}</span> <span class="c">// Define</span>
+ 
+ <span class="n">names</span> <span class="o">=</span> <span class="nb">append</span><span class="p">(</span><span class="n">names</span><span class="p">,</span> <span class="s">"den"</span><span class="p">)</span>
+</code></pre></div></div>
+<p>선언부는 거의 똑같다, 크기 지정만 빼면.<br />
+ 그런데 추가하는 부분이 다른데, <code class="highlighter-rouge">append</code> 라는 함수를 이용해주어야 하며,  해당 함수는
+ 인자로 넘긴 첫번째 <code class="highlighter-rouge">Slice</code> -예제에서의 <code class="highlighter-rouge">names</code>- 를 변화시키는게 아니라, 값을 추가해서 <code class="highlighter-rouge">Return</code> 해준다.<br />
+ 이와 같은 형태는 개발을 하다보면 실질적으로 도움이 된다.<br />
+ 원래 값을 변화시키지 않고, 리턴하는 것이 디버깅에도 조금 더 효율적이니까,</p>
 
 		<br>
 		<br>
